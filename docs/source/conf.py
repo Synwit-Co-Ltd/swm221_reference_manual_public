@@ -42,7 +42,7 @@ html_theme = 'sphinx_rtd_theme'
 
 sphinx_rtd_size_width = "100%"
 
-html_show_sourcelink = True
+html_show_sourcelink = False
 html_static_path = ['_static']
 html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
 
