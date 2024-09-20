@@ -46,5 +46,14 @@ html_show_sourcelink = True
 html_static_path = ['_static']
 html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
 
+sphinx_rtd_size_width = "100%"
+
+numfig = True
+numfig_secnum_depth = 0
+numfig_format = {'figure': '图 %s',
+                 'table': '表格 %s',
+                 'code-block': 'Listing %s',
+                }
+                
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

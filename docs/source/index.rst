@@ -11,7 +11,8 @@ Contents
    :numbered:
    
    ./system/概述.rst
-   
+   ./system/特性.rst
+   ./system/系统架构.rst
    
    
 .. note::
