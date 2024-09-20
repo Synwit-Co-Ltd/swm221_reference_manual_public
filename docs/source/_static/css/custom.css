@@ -1,0 +1,11 @@
+.tight-table td {
+  white-space: normal !important; 
+}
+
+.align-center {
+  text-align: center;
+}
+
+.wy-nav-content {
+  max-width: 1200px !important;
+}
