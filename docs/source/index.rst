@@ -15,7 +15,8 @@ Contents
    ./system/系统架构.rst
    
    ./blocks/ADC/index.rst
-
+   
+   ./blocks/QEI/index.rst
 
 .. note::
 
