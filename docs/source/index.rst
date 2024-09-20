@@ -14,6 +14,7 @@ Contents
    ./system/特性.rst
    ./system/系统架构.rst
    
+   ./blocks/SYSCON/index.rst
    ./blocks/ADC/index.rst
    ./blocks/PWM/index.rst
    ./blocks/QEI/index.rst

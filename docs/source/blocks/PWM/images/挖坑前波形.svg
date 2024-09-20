@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 挖坑前波形.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="7.48726in" height="3.24449in"
+		viewBox="0 0 539.083 233.603" xml:space="preserve" color-interpolation-filters="sRGB" class="st7">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvConvertTheme"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {marker-end:url(#mrkr5-8);stroke:#404040;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st2 {fill:#404040;fill-opacity:1;stroke:#404040;stroke-opacity:1;stroke-width:0.16556291390728}
+		.st3 {stroke:#404040;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st4 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st5 {fill:#000000;font-family:新宋体;font-size:0.833336em}
+		.st6 {stroke:#404040;stroke-dasharray:3.5,2.5;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
+		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Patterns_And_Gradients">
+		<linearGradient id="grad0-5" x1="0" y1="0" x2="1" y2="0" gradientTransform="rotate(270 0.5 0.5)">
+			<stop offset="0" stop-color="#f0f0f0" stop-opacity="1"/>
+			<stop offset="1" stop-color="#ffffff" stop-opacity="1"/>
+		</linearGradient>
+	</defs>
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-8" class="st2" v:arrowType="5" v:arrowSize="2" v:setback="10.57" refX="-10.57" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-6.04,-6.04) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape878-1" v:mID="878" v:groupContext="shape" v:layerMember="0" transform="translate(92.376,-74.0157)">
+			<title>动态连接线.878</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 240.45 L434.09 240.92" class="st1"/>
+		</g>
+		<g id="shape879-9" v:mID="879" v:groupContext="shape" v:layerMember="0" transform="translate(85.2894,-67.1654)">
+			<title>动态连接线.879</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 79.2" class="st1"/>
+		</g>
+		<g id="shape880-15" v:mID="880" v:groupContext="shape" v:layerMember="0" transform="translate(92.376,-201.339)">
+			<title>动态连接线.880</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L425.2 226.52" class="st3"/>
+		</g>
+		<g id="shape881-19" v:mID="881" v:groupContext="shape" v:layerMember="0" transform="translate(92.376,-95.0394)">
+			<title>动态连接线.881</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L425.2 226.52" class="st3"/>
+		</g>
+		<g id="shape882-23" v:mID="882" v:groupContext="shape" transform="translate(21.5098,-202.756)">
+			<title>工作表.882</title>
+			<desc>PERIOD=10000</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="37.7596" cy="228.27" width="75.52" height="10.6667"/>
+			<rect x="0" y="222.937" width="75.5192" height="10.6667" class="st4"/>
+			<text x="7.76" y="231.27" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PERIOD=10000</text>		</g>
+		<g id="shape883-26" v:mID="883" v:groupContext="shape" transform="translate(21.5098,-96.7927)">
+			<title>工作表.883</title>
+			<desc>CMPA=2500</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="37.6438" cy="228.27" width="75.29" height="10.6667"/>
+			<rect x="0" y="222.937" width="75.2877" height="10.6667" class="st4"/>
+			<text x="15.14" y="231.27" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>CMPA=2500</text>		</g>
+		<g id="shape901-29" v:mID="901" v:groupContext="shape" transform="translate(45.6043,-40.0997)">
+			<title>工作表.901</title>
+			<desc>PWM0A</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="22.4806" cy="228.27" width="44.97" height="10.6667"/>
+			<rect x="0" y="222.937" width="44.9612" height="10.6667" class="st4"/>
+			<text x="9.98" y="231.27" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PWM0A</text>		</g>
+		<g id="shape902-32" v:mID="902" v:groupContext="shape" transform="translate(48.439,-11.4173)">
+			<title>工作表.902</title>
+			<desc>PWM0AN</desc>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="22.4806" cy="228.27" width="44.97" height="10.6667"/>
+			<rect x="0" y="222.937" width="44.9612" height="10.6667" class="st4"/>
+			<text x="7.48" y="231.27" class="st5" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PWM0AN</text>		</g>
+		<g id="shape903-35" v:mID="903" v:groupContext="shape" v:layerMember="0" transform="translate(111.368,-67.1654)">
+			<title>动态连接线.903</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 139.12" class="st6"/>
+		</g>
+		<g id="shape904-39" v:mID="904" v:groupContext="shape" v:layerMember="0" transform="translate(271.809,-67.1654)">
+			<title>动态连接线.904</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 139.12" class="st6"/>
+		</g>
+		<g id="shape909-43" v:mID="909" v:groupContext="shape" v:layerMember="0" transform="translate(92.376,-45.4331)">
+			<title>动态连接线.909</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L26.08 226.52" class="st3"/>
+		</g>
+		<g id="shape912-47" v:mID="912" v:groupContext="shape" transform="translate(0.25,-229.685)">
+			<title>工作表.912</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L538.58 233.6" class="st3"/>
+		</g>
+		<g id="shape913-51" v:mID="913" v:groupContext="shape" transform="translate(772.436,3.91828) rotate(90)">
+			<title>工作表.913</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L226.77 233.6" class="st3"/>
+		</g>
+		<g id="shape914-55" v:mID="914" v:groupContext="shape" transform="translate(538.833,464.293) rotate(180)">
+			<title>工作表.914</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L538.58 233.6" class="st3"/>
+		</g>
+		<g id="shape915-59" v:mID="915" v:groupContext="shape" transform="translate(-233.353,230.69) rotate(-90)">
+			<title>工作表.915</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L226.77 233.6" class="st3"/>
+		</g>
+		<g id="shape916-63" v:mID="916" v:groupContext="shape" transform="translate(-94.2365,25.822) rotate(-53.0198)">
+			<title>工作表.916</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L176.71 233.6" class="st3"/>
+		</g>
+		<g id="shape917-67" v:mID="917" v:groupContext="shape" transform="translate(385.661,-114.941) rotate(53.0564)">
+			<title>工作表.917</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L176.39 233.6" class="st3"/>
+		</g>
+		<g id="shape931-71" v:mID="931" v:groupContext="shape" v:layerMember="0" transform="translate(111.368,-38.3465)">
+			<title>动态连接线.931</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape956-75" v:mID="956" v:groupContext="shape" v:layerMember="0" transform="translate(191.561,-67.1654)">
+			<title>动态连接线.956</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.06 233.6 L7.11 92.34" class="st6"/>
+		</g>
+		<g id="shape884-79" v:mID="884" v:groupContext="shape" v:layerMember="0" transform="translate(323.967,-67.1654)">
+			<title>动态连接线.884</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 139.12" class="st6"/>
+		</g>
+		<g id="shape885-83" v:mID="885" v:groupContext="shape" v:layerMember="0" transform="translate(484.407,-67.1654)">
+			<title>动态连接线.885</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 139.12" class="st6"/>
+		</g>
+		<g id="shape886-87" v:mID="886" v:groupContext="shape" transform="translate(118.362,25.822) rotate(-53.0198)">
+			<title>工作表.886</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L176.71 233.6" class="st3"/>
+		</g>
+		<g id="shape887-91" v:mID="887" v:groupContext="shape" transform="translate(598.259,-114.941) rotate(53.0564)">
+			<title>工作表.887</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 233.6 L176.39 233.6" class="st3"/>
+		</g>
+		<g id="shape888-95" v:mID="888" v:groupContext="shape" v:layerMember="0" transform="translate(404.159,-67.1654)">
+			<title>动态连接线.888</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.06 233.6 L7.11 92.34" class="st6"/>
+		</g>
+		<g id="shape889-99" v:mID="889" v:groupContext="shape" v:layerMember="0" transform="translate(118.455,-45.4331)">
+			<title>动态连接线.889</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 240.69 L160.44 240.69" class="st3"/>
+		</g>
+		<g id="shape890-103" v:mID="890" v:groupContext="shape" v:layerMember="0" transform="translate(271.809,-38.3465)">
+			<title>动态连接线.890</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape891-107" v:mID="891" v:groupContext="shape" v:layerMember="0" transform="translate(278.896,-45.4331)">
+			<title>动态连接线.891</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L52.16 226.52" class="st3"/>
+		</g>
+		<g id="shape892-111" v:mID="892" v:groupContext="shape" v:layerMember="0" transform="translate(323.967,-38.3465)">
+			<title>动态连接线.892</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape893-115" v:mID="893" v:groupContext="shape" v:layerMember="0" transform="translate(331.053,-45.4331)">
+			<title>动态连接线.893</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 240.69 L160.44 240.69" class="st3"/>
+		</g>
+		<g id="shape894-119" v:mID="894" v:groupContext="shape" v:layerMember="0" transform="translate(484.407,-38.3465)">
+			<title>动态连接线.894</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape895-123" v:mID="895" v:groupContext="shape" v:layerMember="0" transform="translate(491.494,-45.4331)">
+			<title>动态连接线.895</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L26.08 226.52" class="st3"/>
+		</g>
+		<g id="shape896-127" v:mID="896" v:groupContext="shape" v:layerMember="0" transform="translate(92.376,-2.91339)">
+			<title>动态连接线.896</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L26.08 226.52" class="st3"/>
+		</g>
+		<g id="shape897-131" v:mID="897" v:groupContext="shape" v:layerMember="0" transform="translate(111.368,-10)">
+			<title>动态连接线.897</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape898-135" v:mID="898" v:groupContext="shape" v:layerMember="0" transform="translate(118.455,-31.2598)">
+			<title>动态连接线.898</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 240.69 L160.44 240.69" class="st3"/>
+		</g>
+		<g id="shape899-139" v:mID="899" v:groupContext="shape" v:layerMember="0" transform="translate(271.809,-10)">
+			<title>动态连接线.899</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape900-143" v:mID="900" v:groupContext="shape" v:layerMember="0" transform="translate(278.896,-2.91339)">
+			<title>动态连接线.900</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L52.16 226.52" class="st3"/>
+		</g>
+		<g id="shape905-147" v:mID="905" v:groupContext="shape" v:layerMember="0" transform="translate(323.967,-10)">
+			<title>动态连接线.905</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape906-151" v:mID="906" v:groupContext="shape" v:layerMember="0" transform="translate(331.053,-31.2598)">
+			<title>动态连接线.906</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 240.69 L160.44 240.69" class="st3"/>
+		</g>
+		<g id="shape907-155" v:mID="907" v:groupContext="shape" v:layerMember="0" transform="translate(484.407,-10)">
+			<title>动态连接线.907</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M7.09 233.6 L7.09 219.43" class="st3"/>
+		</g>
+		<g id="shape908-159" v:mID="908" v:groupContext="shape" v:layerMember="0" transform="translate(491.494,-2.91339)">
+			<title>动态连接线.908</title>
+			<v:userDefs>
+				<v:ud v:nameU="msvThemeColors" v:val="VT0(36):26"/>
+				<v:ud v:nameU="msvThemeEffects" v:val="VT0(16):26"/>
+			</v:userDefs>
+			<path d="M0 226.52 L26.08 226.52" class="st3"/>
+		</g>
+	</g>
+</svg>

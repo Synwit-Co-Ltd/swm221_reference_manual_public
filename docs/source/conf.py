@@ -54,6 +54,27 @@ numfig_format = {'figure': '图 %s',
                  'table': '表格 %s',
                  'code-block': 'Listing %s',
                 }
+
+exclude_patterns = [
+  '.vscode', 
+  'system/存储器映射.rst',
+  'blocks/*/functions.rst', 
+  'blocks/*/regs_map.rst', 
+  'blocks/*/regs_tables.rst', 
+  'blocks/*/*tmp.rst',
+  'blocks/*/ADC.rst',
+  'blocks/*/CRC.rst',
+  'blocks/*/DIV.rst',
+  'blocks/*/DMA.rst',
+  'blocks/*/MPU.rst',
+  'blocks/*/QEI.rst',
+  'blocks/*/WDT.rst',
+  'blocks/*/USART.rst',
+  'blocks/*/PWM.rst',
+  'blocks/*/I2C.rst',
+  'blocks/*/GPIO.rst',
+  'blocks/*/PGA.rst',
+]
                 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
