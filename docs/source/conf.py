@@ -6,8 +6,6 @@ project = 'SWM221 参考手册'
 copyright = '2024, 广东华芯微特集成电路有限公司'
 author = 'Synwit'
 release = '1.0'
-
-release = '0.1'
 version = '0.1.0'
 
 # -- General configuration
@@ -35,6 +33,8 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
+
+language = 'zh_CN'
 
 # -- Options for HTML output
 
