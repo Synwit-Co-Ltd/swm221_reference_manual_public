@@ -40,8 +40,6 @@ language = 'zh_CN'
 
 html_theme = 'sphinx_rtd_theme'
 
-sphinx_rtd_size_width = "100%"
-
 html_show_sourcelink = False
 html_static_path = ['_static']
 html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
@@ -55,6 +53,21 @@ numfig_format = {'figure': '图 %s',
                  'code-block': 'Listing %s',
                 }
 
+# The suffix(es) of source filenames.
+# You can specify multiple suffix as a list of string:
+#
+# source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
+
+# The master toctree document.
+master_doc = 'index'
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This patterns also effect to html_static_path and html_extra_path
+# 
+# Add included files into the exclude_patterns array
+# See https://github.com/sphinx-doc/sphinx/issues/9779                                     
 exclude_patterns = [
   '.vscode', 
   'system/存储器映射.rst',
