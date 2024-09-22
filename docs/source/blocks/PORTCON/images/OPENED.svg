@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 OPENED.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="3.93701in" height="3.93701in"
+		viewBox="0 0 283.465 283.465" xml:space="preserve" color-interpolation-filters="sRGB" class="st7">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(1):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st2 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st3 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st4 {fill:#000000;font-family:宋体;font-size:0.916672em}
+		.st5 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st6 {fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st7 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="TransistorCount" v:prompt="" v:val="VT0(3):26"/>
+		</v:userDefs>
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="电气" v:index="0"/>
+		<g id="shape4-1" v:mID="4" v:groupContext="shape" transform="translate(145.324,-153.906)">
+			<title>工作表.4</title>
+			<path d="M0 283.46 L0 249.74 L50.77 249.74" class="st1"/>
+		</g>
+		<g id="shape5-4" v:mID="5" v:groupContext="shape" transform="translate(196.098,-183.133)">
+			<title>工作表.5</title>
+			<rect x="0" y="272.224" width="11.241" height="11.2411" class="st2"/>
+		</g>
+		<g id="shape6-6" v:mID="6" v:groupContext="shape" transform="translate(407.779,289.53) rotate(135)">
+			<title>工作表.6</title>
+			<path d="M0 283.46 L15.9 283.46" class="st1"/>
+		</g>
+		<g id="shape7-9" v:mID="7" v:groupContext="shape" transform="translate(396.538,-111.349) rotate(45.0001)">
+			<title>工作表.7</title>
+			<path d="M0 283.46 L15.9 283.46" class="st1"/>
+		</g>
+		<g id="shape8-12" v:mID="8" v:groupContext="shape" transform="translate(428.789,180.239) rotate(90)">
+			<title>工作表.8</title>
+			<path d="M0 283.46 L31.47 283.46" class="st1"/>
+		</g>
+		<g id="shape9-15" v:mID="9" v:groupContext="shape" transform="translate(137.738,-71.7506)">
+			<title>工作表.9</title>
+			<path d="M0 283.46 L15.59 283.46" class="st1"/>
+		</g>
+		<g id="shape10-18" v:mID="10" v:groupContext="shape" transform="translate(141.99,-68.7692)">
+			<title>工作表.10</title>
+			<path d="M0 283.46 L7.09 283.46" class="st1"/>
+		</g>
+		<g id="shape11-21" v:mID="11" v:groupContext="shape" transform="translate(144.347,-65.2632)">
+			<title>工作表.11</title>
+			<path d="M0 283.46 L2.17 283.46" class="st1"/>
+		</g>
+		<g id="shape12-24" v:mID="12" v:groupContext="shape" transform="translate(106.864,447.759) rotate(-179.961)">
+			<title>工作表.12</title>
+			<path d="M0 283.46 L25.62 283.46" class="st1"/>
+		</g>
+		<g id="shape13-27" v:mID="13" v:groupContext="shape" transform="translate(345.57,154.61) rotate(90)">
+			<title>三角形</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M19.33 283.46 L9.67 264.13 L0 283.46 L19.33 283.46 Z" class="st2"/>
+		</g>
+		<g id="shape14-29" v:mID="14" v:groupContext="shape" transform="translate(62.105,447.966) rotate(180)">
+			<title>工作表.14</title>
+			<path d="M0 283.46 L25.63 283.46" class="st1"/>
+		</g>
+		<g id="shape15-32" v:mID="15" v:groupContext="shape" transform="translate(11.2789,-116.308)">
+			<title>工作表.15</title>
+			<desc>DATA</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="29.2267" cy="275.326" width="58.46" height="16.2765"/>
+			<rect x="0" y="267.188" width="58.4534" height="16.2765" class="st3"/>
+			<text x="18.23" y="278.63" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>DATA</text>		</g>
+		<g id="shape17-35" v:mID="17" v:groupContext="shape" transform="translate(193.114,-186.095)">
+			<title>工作表.17</title>
+			<desc>PIN</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="25.387" cy="267.602" width="50.78" height="31.7247"/>
+			<rect x="0" y="251.74" width="50.774" height="31.7247" class="st5"/>
+			<text x="17.14" y="270.9" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>PIN</text>		</g>
+		<g id="group21-38" transform="translate(-125.385,180.239) rotate(-90)" v:mID="21" v:groupContext="group" v:layerMember="0">
+			<v:custProps>
+				<v:cp v:nameU="Type" v:lbl="类型" v:type="1" v:format="耗尽;增强" v:sortKey="3" v:langID="2052" v:val="VT4(增强)"/>
+				<v:cp v:nameU="Gate" v:lbl="门极数目" v:type="1" v:format="1;2" v:sortKey="4" v:langID="2052" v:val="VT4(1)"/>
+				<v:cp v:nameU="Substrate" v:lbl="基底连接" v:type="1" v:format="无;内部;外部" v:sortKey="5" v:langID="2052" v:val="VT4(外部)"/>
+				<v:cp v:nameU="Channel" v:lbl="通道" v:type="1" v:format="P 型;N 型" v:sortKey="2" v:langID="2052" v:val="VT4(P 型)"/>
+				<v:cp v:nameU="Envelope" v:lbl="管壳" v:type="1" v:format="不可见;可见" v:sortKey="1" v:langID="2052" v:val="VT4(不可见)"/>
+				<v:cp v:nameU="Substrate" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="0" v:cal="0" v:val="VT4(内部)"/>
+				<v:cp v:nameU="Channel" v:lbl="" v:prompt="" v:type="0" v:format="" v:sortKey="" v:invis="false" v:ask="false"
+						v:langID="1033" v:cal="0" v:val="VT4(N 型)"/>
+			</v:custProps>
+			<v:userDefs>
+				<v:ud v:nameU="Type" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Gate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="Substrate" v:val="VT0(2):26"/>
+				<v:ud v:nameU="Envelope" v:val="VT0(0):26"/>
+				<v:ud v:nameU="Channel" v:val="VT0(0):26"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(P 型沟道金属氧化物半导体场效应晶体管。)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="Substrate" v:prompt="" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Channel" v:prompt="" v:val="VT0(1):26"/>
+			</v:userDefs>
+			<title>MOSFET</title>
+			<g id="shape22-39" v:mID="22" v:groupContext="shape" v:layerMember="0" transform="translate(6.37795,-6.37795)">
+				<title>工作表.22</title>
+				<v:userDefs>
+					<v:ud v:nameU="SubType" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Gate" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Substrate" v:val="VT0(0):26"/>
+					<v:ud v:nameU="Envelope" v:val="VT0(0):26"/>
+				</v:userDefs>
+				<path d="M9.57 277.09 L19.13 277.09 L19.13 265.53" class="st1"/>
+				<path d="M19.13 275.09 L19.13 265.53" class="st1"/>
+				<path d="M9.57 238.82 L9.57 263.13 L28.7 263.13" class="st1"/>
+				<path d="M28.7 265.53 L28.7 277.09 L44.65 277.09" class="st1"/>
+				<path d="M9.57 265.53 L9.57 277.09 L-6.38 277.09" class="st1"/>
+				<path d="M31.57 265.53 L25.83 265.53" class="st1"/>
+				<path d="M16.26 265.53 L22 265.53" class="st1"/>
+				<path d="M6.7 265.53 L12.44 265.53" class="st1"/>
+			</g>
+			<g id="shape23-49" v:mID="23" v:groupContext="shape" v:layerMember="0"
+					transform="translate(22.9606,547.54) scale(1,-1)">
+				<title>工作表.23</title>
+				<path d="M0 278.36 L2.55 283.46 L5.1 278.36 L0 278.36 Z" class="st6"/>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -4,7 +4,7 @@
 **1.1.1概述**
 ~~~~~~~~~~~~~
 
-SWM211系列所有型号PWM操作均相同，不同型号PWM通道数可能不同。使用前需使能PWM模块时钟。
+SWM221系列所有型号PWM操作均相同，不同型号PWM通道数可能不同。使用前需使能PWM模块时钟。
 
 PWM模块用于实现芯片输出特定的方波，控制外部元器件，如步进电机等。计数器可以通过APB总线读写寄存器、和外部硬件同时控制，实现计数过程的控制。同时，CPU和外部硬件也可以共同实现对输出PWM信号的控制。
 
@@ -125,20 +125,24 @@ STOP信号为高电平期间停止，低电平期间继续计数，立即生效�
 
 中心对称模式
 
-波形如图 1‑8所示：
-
 |image8|
 
 图 1‑8中心对称模式下计数器计数过程波形
 
-**PWM 外部信号配置说明**
-^^^^^^^^^^^^^^^^^^^^^^^^
+HWHALT控制和SWHALT控制情况下波形如图 1‑9所示：
 
 |image9|
 
-图 1‑9 PWM外部信号配置
+图 1‑9 HWHALT控制和SWHALT控制情况下
 
-*注：ext_event[0~4]分别接PWM_EVT0~4，ext_event[5~6]分别接TIMER0~1*
+**PWM 外部信号配置说明**
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+|image10|
+
+图 1‑10 PWM外部信号配置
+
+*注：ext_event[0~1]分别接PWM_EVT0~1，ext_event[2~4]分别接SWEV0-2，ext_event[5~6]分别接TIMER0~1*
 
 **硬件刹车控制和软件刹车控制**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,11 +153,11 @@ STOP信号为高电平期间停止，低电平期间继续计数，立即生效�
 
 刹车功能也可以控制在BRK信号撤销后PWM信号是否立即变为原始信号或刹车BRK的值直到当前计数周期溢出，PWM的信号才会跟随原始信号进行翻转。可通过配置BRKCRx寄存器OFFA/OFFB位分别配置A路信号和B路信号。
 
-硬件刹车控制和软件刹车控制计数器计数波形如图 6‑66所示：
+硬件刹车控制和软件刹车控制计数器计数波形如图 1‑11所示：
 
-|image10|
+|image11|
 
-图 1‑10 硬件刹车控制和软件刹车控制计数器计数情况
+图 1‑11 硬件刹车控制和软件刹车控制计数器计数情况
 
 BRK过程并不会影响计数器的周期数、对比值等内容，仅仅控制计数器是否完成一次重新启动。
 
@@ -177,11 +181,11 @@ RELOAD信号为上升沿触发，不立即生效，需等到计数器溢出后�
 
 可通过配置IEx寄存器RELOADEN位配置计数器重载中断使能，IFx寄存器查看重载状态，此状态位为写1清零。
 
-如图 6‑67所示：
+如图 1‑12所示：
 
-|image11|
+|image12|
 
-图 1‑11计数器重载波形
+图 1‑12计数器重载波形
 
 *注：ext_event为计数器硬件触发信号，可以完成如下操作：*
 
@@ -202,11 +206,11 @@ RELOAD信号为上升沿触发，不立即生效，需等到计数器溢出后�
 
 如在PWMx计数到周期六分之一时，对PWMx执行一次RESTERT，PWMx将从重新计数，及波形延迟了360/60度相位。
 
-波形示意图如图 1‑12所示：
+波形示意图如图 1‑13所示：
 
-|image12|
+|image13|
 
-图 1‑12 PWM移相示意图
+图 1‑13 PWM移相示意图
 
 **PWM信号产生波形**
 ^^^^^^^^^^^^^^^^^^^
@@ -215,27 +219,27 @@ RELOAD信号为上升沿触发，不立即生效，需等到计数器溢出后�
 
 边沿对齐模式：
 
-|image13|
+|image14|
 
-图 1‑13边沿对齐模式下PWM信号产生波形
+图 1‑14边沿对齐模式下PWM信号产生波形
 
 中心对齐模式：
 
-|image14|
+|image15|
 
-图 1‑14中心对齐模式下PWM信号产生波形
+图 1‑15中心对齐模式下PWM信号产生波形
 
 非对称中心对齐模式：
 
-|image15|
+|image16|
 
-图 1‑15非对称中心对齐模式下PWM信号产生波形
+图 1‑16非对称中心对齐模式下PWM信号产生波形
 
 BRK情况下中心对齐模式：
 
-|image16|
+|image17|
 
-图 1‑16 BRK中心对齐模式下PWM信号产生波形
+图 1‑17 BRK中心对齐模式下PWM信号产生波形
 
 **TRIGGER控制**
 ^^^^^^^^^^^^^^^
@@ -256,20 +260,20 @@ PWM计数器溢出触发：
 
 当计数器溢出TRIG使能，且计数器发生向上溢出或向下溢出时，会产生一个pclk周期的TRIG信号，与自定义TRIG一致，可以根据配置将该trig信息映射到输出的trig[7:0]信号上。
 
-TRIGGER控制波形如图 1‑17所示：
+TRIGGER控制波形如图 1‑18所示：
 
-|image17|
+|image18|
 
-图 1‑17 TRIGGER控制波形
+图 1‑18 TRIGGER控制波形
 
 **重复计数功能**
 ^^^^^^^^^^^^^^^^
 
 重复计数器主要用于控制寄存器RELOAD的时机，在周期性自动重载情况下，只有当重复计数器计为0，且计数器溢出时，才会完成重载动作。
 
-|image18|
+|image19|
 
-图 1‑18重复计数功能波形图
+图 1‑19重复计数功能波形图
 
 **触发SAR ADC采样**
 ^^^^^^^^^^^^^^^^^^^
@@ -289,22 +293,22 @@ ADC配置寄存器（CTRL）中TRIG方式设置为PWM触发。每路PWM对应1�
 
 -  使能PWM模块EN位，当计数值到达MATCH设置值时，触发ADC配置寄存器（CTRL）中选中的通道（CHx）进行采样，采样完成后，将产生EOC标志位，并产生ADC中断
 
-示意图如图 6‑75所示：
+示意图如图 1‑20所示：
 
-|image19|
+|image20|
 
-图 1‑19 PWM触发ADC采样示意图
+图 1‑20 PWM触发ADC采样示意图
 
 **电平翻转**
 ^^^^^^^^^^^^
 
 PWM模块支持电平翻转，可通过配置OUTCRx寄存器中INVA和INVB位，分别对应A通道和B通道。
 
-如图 1‑20所示：
+如图 1‑21所示：
 
-|image20|
+|image21|
 
-图 1‑20电平翻转示意图
+图 1‑21电平翻转示意图
 
 **挖坑及ADC触发功能**
 ^^^^^^^^^^^^^^^^^^^^^
@@ -327,12 +331,12 @@ MASK_A/AN/B/BN有效期间，通过配置CMPTRGx寄存器中ATP位选择ADC_TRIG
 -  通过配置CMPTRGx寄存器中WIDTH位，设置
    Trigger计数器产生的匹配信号输出宽度，范围为0-252个计数时钟长度
 
-|image21|
+|image22|
 
-图 1‑21挖坑前波形
+图 1‑22挖坑前波形
 
 如图
-1‑22所示，设置在PWM0计数器等于1500处在波形上挖两个电平为零的坑，并在坑的3/8宽度位置启动ADC。
+1‑23所示，设置在PWM0计数器等于1500处在波形上挖两个电平为零的坑，并在坑的3/8宽度位置启动ADC。
 
 PWM_CmpTrigger(PWM0, 1500, PWM_DIR_UP, 50, PWM_TRG_1,
 3)，此语句为设置PWM0向上计数，计数值等于1500时发出一个触发信号，触发信号发送到
@@ -341,9 +345,9 @@ trigger1。
 PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 0)，词语为设置PWM0A和PWM0AN在event1为高时分别输出0和0。
 
-|image22|
+|image23|
 
-图 1‑22挖坑后波形
+图 1‑23挖坑后波形
 
 **
 **
@@ -353,253 +357,262 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 13 8 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **名称**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 名称
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **PWM0 BASE：0x40046000**
+      - PWM0 BASE：0x40046000
 
-         **PWM1 BASE：0x40046080**
+         PWM1 BASE：0x40046080
       - 
       - 
       - 
       - 
    - 
 
-      - **CRx**
+      - CRx
       - 0x0
       - R/W
       - 0
       - 第x组PWM的工作模式控制
    - 
 
-      - **OCRx**
+      - OCRx
       - 0x4
       - R/W
       - 0
       - 第x组PWM配置控制
    - 
 
-      - **BRKCRx**
+      - BRKCRx
       - 0x8
       - R/W
       - 0
       - 第x组BRK控制寄存器
    - 
 
-      - **BRKINx**
+      - BRKINx
       - 0xC
       - R/W
       - 0
       - 第x组外部BRK选择寄存器
    - 
 
-      - **PERIODx**
+      - PERIODx
       - 0x20
       - R/W
       - 0
       - 第x组PWM的周期数
    - 
 
-      - **CMPAx**
+      - CMPAx
       - 0x24
       - R/W
       - 0
       - 第x组A路PWM的高电平宽度0
    - 
 
-      - **CMPBx**
+      - CMPBx
       - 0x28
       - R/W
       - 0
       - 第x组B路PWM的高电平宽度0
    - 
 
-      - **DZAx**
+      - DZAx
       - 0x2C
       - R/W
       - 0
       - 第x组A路死区长度控制
    - 
 
-      - **DZBx**
+      - DZBx
       - 0x30
       - R/W
       - 0
       - 第x组B路死区长度控制
    - 
 
-      - **CMPA2x**
+      - CMPA2x
       - 0x34
       - R/W
       - 0
       - 第x组A路PWM的高电平宽度1，仅在非对称中心对齐模式下使用
    - 
 
-      - **CMPB2x**
+      - CMPB2x
       - 0x38
       - R/W
       - 0
       - 第x组B路PWM的高电平宽度1，仅在非对称中心对齐模式下使用
    - 
 
-      - **OVFTRGx**
+      - OVFTRGx
       - 0x50
       - R/W
       - 0
       - 第x组计数器溢出配置
    - 
 
-      - **CMPTRGx**
+      - CMPTRGx
       - 0x54
       - R/W
       - 0
       - 第x组触发控制寄存器
    - 
 
-      - **CMPTRG2x**
+      - CMPTRG2x
       - 0x58
       - R/W
       - 0
       - 第x组触发间隔周期配置寄存器2
    - 
 
-      - **EVMUXx**
+      - EVMUXx
       - 0x60
       - R/W
       - 0
       - 第x组PWM外部信号选择
    - 
 
-      - **EVMSKx**
+      - EVMSKx
       - 0x64
       - R/W
       - 0
       - 第x组PWM外部信号配置寄存器
    - 
 
-      - **IEx**
+      - IEx
       - 0x70
       - R/W
       - 0
       - 第x组中断使能寄存器
    - 
 
-      - **IFx**
+      - IFx
       - 0x74
       - R/W1C
       - 0
       - 第x组PWM的中断状态寄存器
    - 
 
-      - **VALUEx**
+      - VALUEx
       - 0x78
       - RO
       - 0
       - 第x组计数器的当前计数值
    - 
 
-      - **SRx**
+      - SRx
       - 0x7C
       - RO
       - 0
       - 第x组计数器的当前运行状态
    - 
 
-      - **START**
+      - START
       - 0x400
       - R/W
       - 0
       - PWM启动寄存器
    - 
 
-      - **SWBRK**
+      - SWBRK
       - 0x404
       - R/W
       - 0
       - 软件BRK操作启动寄存器
    - 
 
-      - **RESET**
+      - RESET
       - 0x408
       - R/W
       - 0
       - PWM复位寄存器
    - 
 
-      - **RELOADEN**
+      - RELOADEN
       - 0x40C
       - R/W
       - 0
       - PWM重载请求寄存器
    - 
 
-      - **PULSE**
+      - PULSE
       - 0x410
       - R/W
       - 0
       - PWM外部脉冲触发沿选择
    - 
 
-      - **FILTER**
+      - FILTER
       - 0x414
       - R/W
       - 0
       - PWM外部信号滤波选择寄存器
    - 
 
-      - **BRKPOL**
+      - BRKPOL
       - 0x418
       - R/W
       - 0
       - 外部BRK控制寄存器
    - 
 
-      - **BRKIE**
+      - BRKIE
       - 0x41C
       - R/W
       - 0
       - 外部BRK中断使能寄存器
    - 
 
-      - **BRKIF**
+      - BRKIF
       - 0x420
       - R/W
       - 0
       - 外部BRK中断状态寄存器
    - 
 
-      - **EVSR**
+      - EVSR
       - 0x424
       - RO
       - 0
       - 外部信号当前状态寄存器
+   - 
+
+      - SWEV
+      - 0x428
+      - RW
+      - 0x0
+      - 软件模拟外部触发源寄存器
 
 **1.1.6寄存器描述**
 ~~~~~~~~~~~~~~~~~~~
 
-**第x组PWM的工作模式控制寄存器CRx (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM的工作模式控制寄存器CRx (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CRx**
+      - CRx
       - 0x0
       - R/W
       - 0
@@ -607,6 +620,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -691,20 +705,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:24**
+      - 31:24
       - -
       - -
    - 
 
-      - **23:16**
+      - 23:16
       - RPTNUM
       - 重载配置寄存器
 
@@ -715,7 +730,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：计数器每向上或者向下计数一轮，重复计数器减1，即中心对齐模式下每计一个完整的周期，该重复计数器减2
    - 
 
-      - **15:6**
+      - 15:6
       - CLKDIV
       - PWM工作时钟频率相对于系统时钟的分频比选择：
 
@@ -732,7 +747,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注：最多支持1024分频
    - 
 
-      - **5:4**
+      - 5:4
       - CLKSRC
       - 第x组PWM的计数时钟选择
 
@@ -745,7 +760,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          11：保留
    - 
 
-      - **3**
+      - 3
       - DIR
       - 初始计数方向配置寄存器
 
@@ -753,12 +768,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          1：向下计数模式
 
-         注1：当MODEx=201和10时，表示中心对齐模式下计数器在前半周期的计数方向
+         注1：当MODEx=2’b01和2’b10时，表示中心对齐模式下计数器在前半周期的计数方向
 
          注2：向上计数是计数器启动之后初始值为低（begin_with_low）的模式，向下计数是计数器启动之后初始值为高（begin_with_high）的模式
    - 
 
-      - **2**
+      - 2
       - MULT
       - 第x组PWM的计数模式
 
@@ -771,7 +786,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：多次计数模式下，计数器始终处在计数过程当中，且每轮计数完成都会产生溢出状态
    - 
 
-      - **1：0**
+      - 1：0
       - MODE
       - 第x组PWM的工作模式控制
 
@@ -787,22 +802,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：非对称中心对齐模式下，向上计数过程中以CMPA/CMPB为参考值，向下计数过程中以CMPA2/CMPB2为参考值，输出对应的高电平宽度
 
-**第x组PWM配置控制OCRx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM配置控制OCRx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **OCRx**
+      - OCRx
       - 0x4
       - R/W
       - 0
@@ -810,6 +826,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -867,15 +884,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
       - 
       - 
       - 
-      - 
-      - 
-      - 
-      - 
+      - FORCEBN
+      - FORCEAN
+      - FORCEB
+      - FORCEA
    - 
-      - **11**
-      - **10**
-      - **9**
-      - **8**      
+
       - **7**
       - **6**
       - **5**
@@ -884,11 +898,8 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
       - **2**
       - **1**
       - **0**
-   -
-      - FORCEBN
-      - FORCEAN
-      - FORCEB 
-      - FORCEA
+   - 
+
       - INVBN
       - INVAN
       - INVB
@@ -900,43 +911,49 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:12**
+      - 31:12
       - -
       - -
    - 
-      - **11**
-      - FFORCEBN
+
+      - 11
+      - FORCEBN
       - 1：工作时将BN路pwmobn强制输出，电平状态由IDLEBNx决定
 
          0：工作时BN路pwmobn正常输出
-   -
-      - **10**
-      - FFORCEAN
+   - 
+
+      - 10
+      - FORCEAN
       - 1：工作时将AN路pwmoan强制输出，电平状态由IDLEANx决定
 
          0：工作时AN路pwmoan正常输出
-   -
-      - **9**
+   - 
+
+      - 9
       - FORCEB
       - 1：工作时将B路pwmob强制输出，电平状态由IDLEBx决定
 
          0：工作时B路pwmob正常输出
    - 
-      - **8**
+
+      - 8
       - FORCEA
       - 1：工作时将A路pwmoa强制输出，电平状态由IDLEAx决定
 
          0：工作时A路pwmoa正常输出
    - 
-      - **7**
+
+      - 7
       - INVBN
       - 1：工作时将BN路pwmobn反向后输出
 
@@ -945,7 +962,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：该位直接操作PWM的最终输出电平（死区计算、PWMMASK、BRK操作之后）
    - 
 
-      - **6**
+      - 6
       - INVAN
       - 1：工作时将AN路pwmoan反向后输出
 
@@ -954,7 +971,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：该位直接操作PWM的输出电平（死区计算、PWMMASK、BRK操作之后）
    - 
 
-      - **5**
+      - 5
       - INVB
       - 1：工作时将B路pwmob反向后输出
 
@@ -963,7 +980,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：该位直接操作PWM的输出电平（死区计算、PWMMASK、BRK操作之后）
    - 
 
-      - **4**
+      - 4
       - INVA
       - 1：工作时将A路pwmoa反向后输出
 
@@ -972,49 +989,50 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：该位直接操作PWM的输出电平（死区计算、PWMMASK、BRK操作之后）
    - 
 
-      - **3**
+      - 3
       - IDLEBN
       - 1：空闲时BN路pwmobn的原始输出为高
 
          0：空闲时BN路pwmobn的原始输出为低
    - 
 
-      - **2**
+      - 2
       - IDLEAN
       - 1：空闲时AN路pwmoan的原始输出为高
 
          0：空闲时AN路pwmoan的原始输出为低
    - 
 
-      - **1**
+      - 1
       - IDLEB
       - 1：空闲时B路pwmob的原始输出为高
 
          0：空闲时B路pwmob的原始输出为低
    - 
 
-      - **0**
+      - 0
       - IDLEA
       - 1：空闲时A路pwmoa的原始输出为高
 
          0：空闲时A路pwmoa的原始输出为低
 
-**第x组BRK控制寄存器BRKCRx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BRK控制寄存器BRKCRx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **BRKCRx**
+      - BRKCRx
       - 0x8
       - R/W
       - 0
@@ -1022,6 +1040,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1061,8 +1080,8 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
       - 
       - 
       - 
-      - ACTIVE
-      - SWBRKST
+      - HWHALT
+      - SWHALT
    - 
 
       - **15**
@@ -1106,21 +1125,22 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:18**
+      - 31:18
       - -
       - -
    - 
 
-      - **17**
-      - ACTIVE
+      - 17
+      - HWHALT
       - 当前外部激活的BRK状态
 
          1：正在进行BRK
@@ -1128,8 +1148,8 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有进行BRK
    - 
 
-      - **16**
-      - SWBRKST
+      - 16
+      - SWHALT
       - 当前软件激活的BRK状态
 
          1：正在进行BRK
@@ -1137,12 +1157,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有进行BRK
    - 
 
-      - **15:11**
+      - 15:11
       - -
       - -
    - 
 
-      - **10**
+      - 10
       - STPCNT
       - 第x组计数器在BRK过程中的状态
 
@@ -1151,7 +1171,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：停止并清除计数值
    - 
 
-      - **9**
+      - 9
       - OUTBN
       - 第x组BN路在BRK过程中输出的电平值
 
@@ -1160,7 +1180,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：刹车过程中输出低电平
    - 
 
-      - **8**
+      - 8
       - OUTAN
       - 第x组AN路在BRK过程中输出的电平值
 
@@ -1169,12 +1189,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：刹车过程中输出低电平
    - 
 
-      - **7:6**
+      - 7:6
       - -
       - -
    - 
 
-      - **5**
+      - 5
       - OFFB
       - B路信号在BRK信号撤消之后
 
@@ -1185,7 +1205,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：当该位被配置为1时，需要软件保证STPCNT为0（计数器能够正常计数），当STPCNT为1时，该位配置1无效果，按为0时的方式发生作用。
    - 
 
-      - **4**
+      - 4
       - OUTB
       - 第x组B路在BRK过程中输出的电平值
 
@@ -1194,12 +1214,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：刹车过程中输出低电平
    - 
 
-      - **3:2**
+      - 3:2
       - -
       - -
    - 
 
-      - **1**
+      - 1
       - OFFA
       - A路信号在BRK信号撤消之后
 
@@ -1210,7 +1230,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：当该位被配置为1时，需要软件保证STPCNT为0（计数器能够正常计数），当STPCNT为1时，该位配置1无效果，按为0时的方式发生作用。
    - 
 
-      - **0**
+      - 0
       - OUTA
       - 第x组A路在BRK过程中输出的电平值
 
@@ -1218,26 +1238,27 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          0：刹车过程中输出低电平
 
-*注1：SWBRK和HWBRK都受BRKCTRL寄存器控制*
+*注1：*\ SW_HALT和HW_HALT\ *都受BRKCTRL寄存器控制*
 
 *注2：配置该BRKCRx寄存器之前，应先配置模块BRK功能的全局寄存器BRKPOL、BRKIE.*
 
-**第x组外部BRK选择寄存器BRKINx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+外部BRK选择寄存器BRKINx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **BRKINx**
+      - BRKINx
       - 0xC
       - R/W
       - 0
@@ -1245,6 +1266,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1329,20 +1351,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:7**
+      - 31:7
       - -
       - -
    - 
 
-      - **6**
+      - 6
       - BRK2B
       - 第x组B路是否受外部硬件BRK2信号的影响
 
@@ -1353,7 +1376,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：B/BN路同时受BRK2B控制
    - 
 
-      - **5**
+      - 5
       - BRK1B
       - 第x组B路是否受外部硬件BRK1信号的影响
 
@@ -1364,7 +1387,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：B/BN路同时受BRK1B控制
    - 
 
-      - **4**
+      - 4
       - BRK0B
       - 第x组B路是否受外部硬件BRK0信号的影响
 
@@ -1375,12 +1398,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：B/BN路同时受BRK0B控制
    - 
 
-      - **3**
+      - 3
       - -
       - -
    - 
 
-      - **2**
+      - 2
       - BRK2A
       - 第x组A路是否受外部硬件BRK2信号的影响
 
@@ -1391,7 +1414,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：A/AN路同时受BRK2A控制
    - 
 
-      - **1**
+      - 1
       - BRK1A
       - 第x组A路是否受外部硬件BRK1信号的影响
 
@@ -1402,7 +1425,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：A/AN路同时受BRK1A控制
    - 
 
-      - **0**
+      - 0
       - BRK0A
       - 第x组A路是否受外部硬件BRK0信号的影响
 
@@ -1412,22 +1435,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注1：A/AN路同时受BRK0A控制
 
-**第x组PWM的周期数PERIODx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM的周期数PERIODx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **PERIODx**
+      - PERIODx
       - 0x20
       - R/W
       - 0
@@ -1435,6 +1459,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1519,20 +1544,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:16**
+      - 31:16
       - -
       - -
    - 
 
-      - **15:0**
+      - 15:0
       - PERIOD
       - 第x组PWM的周期数
 
@@ -1542,26 +1568,27 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 注2：当高电平值CMPA/CMPB为0时，输出翻转不考虑死区值，A/B原始输出保持为0，AN/BN原始输出保持为1
 
-注3：当翻转比较值(CMPA/B)+死区值大于周期数时，A/B原始输出保持为0，AN/BN原始输出保持为1。
+注3：当高电平值CMPA/CMPB小于死区值，A/B原始输出保持为0。
 
-注4：非对称中心对齐模式下，当翻转比较值2大于周期数时，比较值2配置无效，A/B原始输出在周期值向下翻转为0，AN/BN因为此时翻转比较值+死区值也一定大于周期数，因此AN/BN原始输出此时翻转为1
+注4：非对称中心对齐模式下，当翻转比较值1大于周期数时，比较值1配置无效，A/B原始输出在周期值向下翻转为1，AN/BN因为此时翻转比较值+死区值也一定大于周期数，因此AN/BN原始输出此时翻转为0。
 
-**第x组A路PWM的高电平宽度CMPAx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A路PWM的高电平宽度CMPAx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPAx**
+      - CMPAx
       - 0x24
       - R/W
       - 0
@@ -1569,6 +1596,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1653,20 +1681,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：16**
+      - 31：16
       - -
       - -
    - 
 
-      - **15:0**
+      - 15:0
       - CMPA
       - 第x组A路PWM的高电平宽度
 
@@ -1674,22 +1703,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：中心对齐模式和非对称中心对齐模式下，此比较值为向上计数过程中的高电平宽度值。
 
-**第x组B路PWM的高电平宽度CMPBx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+B路PWM的高电平宽度CMPBx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPBx**
+      - CMPBx
       - 0x28
       - R/W
       - 0
@@ -1697,6 +1727,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1781,43 +1812,41 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：16**
+      - 31：16
       - -
       - -
    - 
 
-      - **15：0**
+      - 15：0
       - CMPB
       - 第x组B路PWM的高电平宽度
 
-         注1：边沿触发模式下，不论向上还是向下计数模式，均以此比较值作为高电平宽度。
-
-         注2：中心对齐模式和非对称中心对齐模式下，此比较值为向上计数过程中的高电平宽度值。
-
-**第x组A路死区长度控制DZAx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A路死区长度控制DZAx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **DZAx**
+      - DZAx
       - 0x2C
       - R/W
       - 0
@@ -1825,6 +1854,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -1909,20 +1939,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:10**
+      - 31:10
       - Reserve
       - -
    - 
 
-      - **9:0**
+      - 9:0
       - DZA
       - 第x组A路死区长度控制。
 
@@ -1932,22 +1963,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          例如：当idle值为0，向下计数，开始启动时也会计算死区值。
 
-**第x组B路死区长度控制DZBx (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+B路死区长度控制DZBx (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **DZBx**
+      - DZBx
       - 0x30
       - R/W
       - 0
@@ -1955,6 +1987,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2039,45 +2072,41 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:10**
+      - 31:10
       - -
       - -
    - 
 
-      - **9:0**
+      - 9:0
       - DZB
       - 第x组B路死区长度控制
 
-         注1：当占空比为0或100时死区失效
-
-         注2：只要出现波形上升沿都会计算死区值
-
-         例如：当idle值为0，向下计数，开始启动时也会计算死区值。
-
-**第x组A路PWM的高电平宽度2寄存器CMPA2x (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A路PWM的高电平宽度2寄存器CMPA2x (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPA2x**
+      - CMPA2x
       - 0x34
       - R/W
       - 0
@@ -2085,6 +2114,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2169,20 +2199,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：16**
+      - 31：16
       - -
       - -
    - 
 
-      - **15:0**
+      - 15:0
       - CMPA2
       - 第x组A路PWM的高电平宽度2。
 
@@ -2192,22 +2223,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：CMPA2必须小于等于PERIODx，否则在向下计数过程中CMPA2按PERIODx计算，A原始输出始终保持1，AN原始输出始终保持0
 
-**第x组B路PWM的高电平宽度2寄存器CMPB2x (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+B路PWM的高电平宽度2寄存器CMPB2x (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPB2x**
+      - CMPB2x
       - 0x38
       - R/W
       - 0
@@ -2215,6 +2247,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2299,20 +2332,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：16**
+      - 31：16
       - -
       - 
    - 
 
-      - **15：0**
+      - 15：0
       - CMPB2
       - 第x组B路PWM的高电平宽度2。
 
@@ -2322,22 +2356,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：CMPB2必须小于PERIODx，否则在向下计数过程中CMPB2按PERIODx计算，B原始输出始终保持1，BN原始输出始终保持0
 
-**第x组计数器溢出配置寄存器OVFTRGx(x=0,1)** 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+计数器溢出配置寄存器OVFTRGx(x=0,1) 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **OVFTRGx**
+      - OVFTRGx
       - 0x50
       - R/W
       - 0
@@ -2345,6 +2380,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2429,20 +2465,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31: 5**
+      - 31: 5
       - Reserve
       - -
    - 
 
-      - **4：2**
+      - 4：2
       - MUX
       - 计数器溢出信号映射到哪一路trig输出
 
@@ -2463,7 +2500,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：映射到trig[7]
    - 
 
-      - **1**
+      - 1
       - DNEN
       - 计数器向下溢出映射使能
 
@@ -2472,7 +2509,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：向下溢出映射不使能
    - 
 
-      - **0**
+      - 0
       - UPEN
       - 计数器向上溢出映射使能
 
@@ -2480,22 +2517,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          0：向上溢出映射不使能
 
-**第x组触发控制寄存器CMPTRGx (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+触发控制寄存器CMPTRGx (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPTRGx**
+      - CMPTRGx
       - 0x54
       - R/W
       - 0
@@ -2503,6 +2541,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2587,15 +2626,16 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：29**
+      - 31：29
       - ATP
       - ADC_TRIG信号产生时机选择位
 
@@ -2628,7 +2668,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          2：当pwm_trig宽度不能被8整除时，会按照如注1的情况进行近似计算。
    - 
 
-      - **28**
+      - 28
       - DIR
       - 中心对齐工作模式下，产生TRIG信号的时机
 
@@ -2639,12 +2679,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：仅在中心对齐模式和非对称中心对齐模式下有效
    - 
 
-      - **27：26**
+      - 27：26
       - -
       - -
    - 
 
-      - **25:20**
+      - 25:20
       - WIDTH
       - 第x组Trigger计数器产生的匹配信号输出宽度
 
@@ -2668,7 +2708,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：当WIDTH配置为0时，不产生pwm_trig信号，只产生trig_adc信号
    - 
 
-      - **19:17**
+      - 19:17
       - MUX
       - 第x组Trigger计数器产生的匹配信号映射到哪一路trig输出
 
@@ -2689,7 +2729,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：映射到trig[7]
    - 
 
-      - **16**
+      - 16
       - EN
       - 第x组Trigger计数器信号是否使能
 
@@ -2698,28 +2738,29 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **15:0**
+      - 15:0
       - CMP
       - 第x组计数器的值与此比较值相等时产生Trigger信号
 
          注1：如果第x组计数器的值和此比较值的值相等，则trigger输出一个精度为4倍计数时钟的高脉冲，宽度可配置，且输出的pwm_trig能够跨计数器的周期。
 
-**第x组触发间隔周期配置寄存器2 CMPTRG2x (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+触发间隔周期配置寄存器2 CMPTRG2x (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **CMPTRG2x**
+      - CMPTRG2x
       - 0x58
       - R/W
       - 0
@@ -2727,6 +2768,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2811,20 +2853,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：3**
+      - 31：3
       - -
       - -
    - 
 
-      - **2：0**
+      - 2：0
       - INTV
       - 触发间隔周期选择
 
@@ -2844,22 +2887,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          111：间隔7周期触发一次
 
-**第x组PWM外部信号选择寄存器EVMUXx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM外部信号选择寄存器EVMUXx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **EVMUXx**
+      - EVMUXx
       - 0x60
       - R/W
       - 0
@@ -2867,6 +2911,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -2951,20 +2996,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31**
+      - 31
       - -
       - -
    - 
 
-      - **30：28**
+      - 30：28
       - MASKBN
       - BN路MASK功能选择寄存器
 
@@ -2985,12 +3031,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：由ext_event[6]控制BN路MASK
    - 
 
-      - **27**
+      - 27
       - -
       - -
    - 
 
-      - **26：24**
+      - 26：24
       - MASKAN
       - AN路MASK功能选择寄存器
 
@@ -3011,12 +3057,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：由ext_event[6]控制AN路MASK
    - 
 
-      - **23**
+      - 23
       - -
       - -
    - 
 
-      - **22：20**
+      - 22：20
       - MASKB
       - B路MASK功能选择寄存器
 
@@ -3037,12 +3083,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：由ext_event[6]控制B路MASK
    - 
 
-      - **19**
+      - 19
       - -
       - -
    - 
 
-      - **18：16**
+      - 18：16
       - MASKA
       - A路MASK功能选择寄存器
 
@@ -3063,12 +3109,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          111：由ext_event[6]控制A路MASK
    - 
 
-      - **15**
+      - 15
       - -
       - -
    - 
 
-      - **14：12**
+      - 14：12
       - RELOAD
       - 计数器外部重启功能选择寄存器
 
@@ -3091,12 +3137,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：外部发起的重启请求，当RELOAD_EN为1且发生上升沿时，会完成一次“清除+重载+启动”的功能，清除的内容为当前计数值、当前的分频值、当前重复计数值。然后重新启动一次全新的计数过程。
    - 
 
-      - **11**
+      - 11
       - -
       - -
    - 
 
-      - **10：8**
+      - 10：8
       - PAUSE
       - 计数器外部暂停功能选择寄存器
 
@@ -3123,12 +3169,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：当检测到外部暂停时，计数器最少保持一个计数时钟的暂停
    - 
 
-      - **7**
+      - 7
       - -
       - -
    - 
 
-      - **6：4**
+      - 6：4
       - STOP
       - 计数器外部停止功能选择寄存器
 
@@ -3153,12 +3199,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：计数器被停止之后，需要等待选中的ext_event变为低（停止计数的功能失效），再经过CPU或者硬件启动，才会开始计数。
    - 
 
-      - **3**
+      - 3
       - -
       - -
    - 
 
-      - **2：0**
+      - 2：0
       - START
       - 计数器外部启动功能选择寄存器
 
@@ -3190,22 +3236,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 *注6：MASK为高电平时输出设定值，低电平时输出正常值。A/AN/B/BN路输出MASK可以配置为立即生效，也可以配置为等到当前周期溢出之后才会MASK到设定值。当MASK信号撤消之后，也可以配置为立即生效，或者会继续保留MASK值直到当前周期溢出*\ 。
 
-**第x组PWM外部信号配置寄存器EVMSKx (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM外部信号配置寄存器EVMSKx (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **EVMSKx**
+      - EVMSKx
       - 0x64
       - R/W
       - 0
@@ -3213,6 +3260,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -3297,20 +3345,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:9**
+      - 31:9
       - -
       - -
    - 
 
-      - **8**
+      - 8
       - STPCLR
       - 计数器外部停止期间计数器是否清除
 
@@ -3323,12 +3372,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：EV_STOP信号引起的计数器停止和清除动作均立即生效，精确到系统时钟域
    - 
 
-      - **7：5**
+      - 7：5
       - -
       - -
    - 
 
-      - **4**
+      - 4
       - IMME
       - MASK信号是否立即生效
 
@@ -3343,7 +3392,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：溢出之后被MASK时，PWM输出会同步到计数器溢出，使用系统时钟对外部输入的MASK触发信号进行采样，当采到MASK触发源为1时，PWM输出被MASK的时间最少持续一个计数溢出。当输入的有效MASK触发信号出现在跨计数器溢出点的情况时，PWM输出MASK值会持续两次计数溢出
    - 
 
-      - **3**
+      - 3
       - OUTBN
       - 输出信号PWMBN被MASK的目标电平值
 
@@ -3352,7 +3401,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：表示MASK到1
    - 
 
-      - **2**
+      - 2
       - OUTAN
       - 输出信号PWMAN被MASK的目标电平值
 
@@ -3361,7 +3410,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：表示MASK到1
    - 
 
-      - **1**
+      - 1
       - OUTB
       - 输出信号PWMB被MASK的目标电平值
 
@@ -3370,7 +3419,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：表示MASK到1
    - 
 
-      - **0**
+      - 0
       - OUTA
       - 输出信号PWMA被MASK的目标电平值
 
@@ -3378,22 +3427,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          1：表示MASK到1
 
-**第x组中断使能寄存器IEx (x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+中断使能寄存器IEx (x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **IEx**
+      - IEx
       - 0x70
       - R/W
       - 0xFF
@@ -3401,6 +3451,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -3485,20 +3536,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31: 7**
+      - 31: 7
       - -
       - -
    - 
 
-      - **6**
+      - 6
       - RELOADEN
       - 第x组PWM计数器重载中断使能
 
@@ -3507,7 +3559,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **5**
+      - 5
       - DNCMPB
       - 第x组PWM计数器向下计数过程中B路上升沿中断使能
 
@@ -3516,7 +3568,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **4**
+      - 4
       - DNCMPA
       - 第x组PWM计数器向下计数过程中A路上升沿中断使能
 
@@ -3525,7 +3577,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **3**
+      - 3
       - UPCMPB
       - 第x组PWM计数器向上计数过程中B路下降沿中断使能
 
@@ -3534,7 +3586,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **2**
+      - 2
       - UPCMPA
       - 第x组PWM计数器向上计数过程中A路下降沿中断使能
 
@@ -3543,7 +3595,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **1**
+      - 1
       - DNOVF
       - 第x组PWM计数器向下溢出中断使能
 
@@ -3552,7 +3604,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **0**
+      - 0
       - UPOVF
       - 第x组PWM计数器向上溢出中断使能
 
@@ -3560,22 +3612,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          0：不使能
 
-**第x组PWM的中断状态寄存器IFx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM的中断状态寄存器IFx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **IFx**
+      - IFx
       - 0x74
       - R/W1C
       - 0
@@ -3583,6 +3636,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -3667,20 +3721,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31: 7**
+      - 31: 7
       - -
       - -
    - 
 
-      - **6**
+      - 6
       - RELOADST
       - 第x组PWM计数器重载状态，写1清除
 
@@ -3699,7 +3754,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：当CPU配置RESTART_PWMX寄存器时，同样也会有一个自动reload，该动作也不会置位重载状态
    - 
 
-      - **5**
+      - 5
       - DNCMPB
       - 第x组PWM计数器向下计数过程中B路上升沿发生状态，写1清除
 
@@ -3708,7 +3763,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有发生
    - 
 
-      - **4**
+      - 4
       - DNCMPA
       - 第x组PWM计数器向下计数过程中A路上升沿发生状态，写1清除
 
@@ -3717,7 +3772,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有发生
    - 
 
-      - **3**
+      - 3
       - UPCMPB
       - 第x组PWM计数器向上计数过程中B路下降沿发生状态，写1清除
 
@@ -3726,7 +3781,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有发生
    - 
 
-      - **2**
+      - 2
       - UPCMPA
       - 第x组PWM计数器向上计数过程中A路下降沿发生状态，写1清除
 
@@ -3735,7 +3790,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有发生
    - 
 
-      - **1**
+      - 1
       - DNOVF
       - 第x组PWM计数器向下溢出状态，写1清除
 
@@ -3744,7 +3799,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：没有发生溢出
    - 
 
-      - **0**
+      - 0
       - UPOVF
       - 第x组PWM计数器向上溢出状态
 
@@ -3754,22 +3809,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注1：写1清除
 
-**第x组计数器的当前计数值VALUEx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+计数器的当前计数值VALUEx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **VALUEx**
+      - VALUEx
       - 0x78
       - RO
       - 0
@@ -3777,6 +3833,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -3861,39 +3918,41 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:16**
+      - 31:16
       - -
       - -
    - 
 
-      - **15:0**
+      - 15:0
       - CNT
       - 第x组PWM的当前计数值。
 
-**第x组计数器的当前运行状态SRx(x=0,1)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+计数器的当前运行状态SRx(x=0,1)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **SRx**
+      - SRx
       - 0x7C
       - RO
       - 0
@@ -3901,6 +3960,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -3985,40 +4045,41 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:9**
+      - 31:9
       - -
       - -
    - 
 
-      - **8**
+      - 8
       - OUTBN
       - 第x组PWM计数器当前BN路输出
    - 
 
-      - **7**
+      - 7
       - OUTAN
       - 第x组PWM计数器当前AN路输出
    - 
 
-      - **6**
+      - 6
       - OUTB
       - 第x组PWM计数器当前B路输出
    - 
 
-      - **5**
+      - 5
       - OUTA
       - 第x组PWM计数器当前A路输出
    - 
 
-      - **4**
+      - 4
       - DIR
       - 第x组PWM计数器当前计数方向
 
@@ -4027,12 +4088,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：向下计数过程当中
    - 
 
-      - **3:2**
+      - 3:2
       - -
       - -
    - 
 
-      - **1:0**
+      - 1:0
       - STAT
       - 第x组PWM的计数器状态
 
@@ -4042,22 +4103,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          10：PAUSE状态，计数器被暂停
 
-**PWM启动寄存器START**
-^^^^^^^^^^^^^^^^^^^^^^
+PWM启动寄存器START
+^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **START**
+      - START
       - 0x400
       - R/W
       - 0
@@ -4065,6 +4127,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4149,20 +4212,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31: 2**
+      - 31: 2
       - -
       - -
    - 
 
-      - **1**
+      - 1
       - PWM1
       - PWM1计数器启动位
 
@@ -4177,7 +4241,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：单次计数模式完成、BRK停止、外部硬件停止发生时，该位也会被置0
    - 
 
-      - **0**
+      - 0
       - PWM0
       - PWM0计数器启动位
 
@@ -4191,22 +4255,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注3：单次计数模式完成、BRK停止、外部硬件停止发生时，该位也会被置0
 
-**软件BRK操作启动寄存器SWBRK**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+软件BRK操作启动寄存器SWBRK
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **SWBRK**
+      - SWBRK
       - 0x404
       - R/W
       - 0
@@ -4214,6 +4279,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4298,20 +4364,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:10**
+      - 31:10
       - -
       - -
    - 
 
-      - **9**
+      - 9
       - PWM1B
       - PWM1的B路软件BRK启动
 
@@ -4320,7 +4387,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：启动
    - 
 
-      - **8**
+      - 8
       - PWM0B
       - PWM0的B路软件BRK启动
 
@@ -4329,12 +4396,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：启动
    - 
 
-      - **7:2**
+      - 7:2
       - -
       - -
    - 
 
-      - **1**
+      - 1
       - PWM1A
       - PWM1的A路软件BRK启动
 
@@ -4343,7 +4410,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          1：启动
    - 
 
-      - **0**
+      - 0
       - PWM0A
       - PWM0的A路软件BRK启动
 
@@ -4351,22 +4418,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          1：启动
 
-**PWM复位寄存器RESET**
-^^^^^^^^^^^^^^^^^^^^^^
+PWM复位寄存器RESET
+^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **RESET**
+      - RESET
       - 0x408
       - R/W1C
       - 0
@@ -4374,6 +4442,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4458,20 +4527,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:2**
+      - 31:2
       - -
       - -
    - 
 
-      - **1**
+      - 1
       - PWM1
       - PWM1寄存器复位操作
 
@@ -4484,7 +4554,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：复位范围为该组PWM的全部逻辑
    - 
 
-      - **0**
+      - 0
       - PWM0
       - PWM0寄存器复位操作
 
@@ -4496,22 +4566,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：复位范围为该组PWM的全部逻辑
 
-**PWM重载请求寄存器RELOADEN**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM重载请求寄存器RELOADEN
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **RELOADEN**
+      - RELOADEN
       - 0x40C
       - R/W
       - 0
@@ -4519,6 +4590,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4603,20 +4675,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31：10**
+      - 31：10
       - -
       - -
    - 
 
-      - **9**
+      - 9
       - RESTART_PWM1
       - PWM1重新启动
 
@@ -4630,7 +4703,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：在IDLE状态下置位，效果与START一致，会引起计数器开始计数（自动完成RELOAD）动作
    - 
 
-      - **8**
+      - 8
       - RESTART_PWM0
       - PWM0重新启动
 
@@ -4644,12 +4717,12 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注3：在IDLE状态下置位，效果与START一致，会引起计数器开始计数（自动完成RELOAD）动作
    - 
 
-      - **7：2**
+      - 7：2
       - -
       - -
    - 
 
-      - **1**
+      - 1
       - RELOADEN_PWM1
       - PWM1寄存器重载使能，软件置位，软件清除
 
@@ -4663,7 +4736,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：RELOAD使能后，到实际的RELOAD动作（周期溢出时）发生之间，如果上述的寄存器又被赋予了新值，则以最后的值作为重载值。
    - 
 
-      - **0**
+      - 0
       - RELOADEN_PWM0
       - PWM0寄存器重载使能，软件置位，软件清除
 
@@ -4676,22 +4749,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：RELOAD使能后，到实际的RELOAD动作（周期溢出时）发生之间，如果上述的寄存器又被赋予了新值，则以最后的值作为重载值。
 
-**PWM外部脉冲触发沿选择PULSE**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM外部脉冲触发沿选择PULSE
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **PULSE**
+      - PULSE
       - 0x410
       - R/W1C
       - 0
@@ -4699,6 +4773,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4783,20 +4858,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:2**
+      - 31:2
       - -
       - -
    - 
 
-      - **1:0**
+      - 1:0
       - EDGE1
       - 外部计数时钟pulse1触发沿选择寄存器
 
@@ -4807,7 +4883,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注1：外部计数时钟触发计数器过程中，如果发生了RESTART_PWMX功能（外部或者软件），则RESTART_PWMX之后的新计数过程需要等到下一次pulse的触发沿时才会发生
    - 
 
-      - **0**
+      - 0
       - EDGE0
       - 外部计数时钟pulse0触发沿选择寄存器
 
@@ -4817,22 +4893,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注1：外部计数时钟触发计数器过程中，如果发生了RESTART_PWMX功能（外部或者软件），则RESTART_PWMX之后的新计数过程需要等到下一次pulse的触发沿时才会发生
 
-**PWM外部信号滤波选择寄存器FILTER**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PWM外部信号滤波选择寄存器FILTER
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **FILTER**
+      - FILTER
       - 0x414
       - R/W
       - 0
@@ -4840,6 +4917,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -4924,20 +5002,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:2**
+      - 31:2
       - Reserve
       - 保留
    - 
 
-      - **1:0**
+      - 1:0
       - FILTER
       - 外部信号滤波配置
 
@@ -4953,19 +5032,20 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：ext_event[6:4]不参与滤波
 
-**外部BRK控制寄存器BRKPOL**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+外部BRK控制寄存器BRKPOL
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
       - BRKPOL
@@ -4976,6 +5056,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -5060,20 +5141,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:3**
+      - 31:3
       - -
       - -
    - 
 
-      - **2**
+      - 2
       - BRK2
       - 刹车信号2极性配置
 
@@ -5082,7 +5164,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：硬件刹车输入低电平有效
    - 
 
-      - **1**
+      - 1
       - BRK1
       - 刹车信号1极性配置
 
@@ -5091,7 +5173,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：硬件刹车输入低电平有效
    - 
 
-      - **0**
+      - 0
       - BRK0
       - 刹车信号0极性配置
 
@@ -5099,22 +5181,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          0：硬件刹车输入低电平有效
 
-**外部BRK中断使能寄存器BRKIE**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+外部BRK中断使能寄存器BRKIE
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **BRKIE**
+      - BRKIE
       - 0x41C
       - R/W
       - 0
@@ -5122,6 +5205,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -5206,20 +5290,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:3**
+      - 31:3
       - -
       - -
    - 
 
-      - **2**
+      - 2
       - BRK2
       - 硬件刹车2中断使能。
 
@@ -5228,7 +5313,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **1**
+      - 1
       - BRK1
       - 硬件刹车1中断使能。
 
@@ -5237,7 +5322,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          0：不使能
    - 
 
-      - **0**
+      - 0
       - BRK0
       - 硬件刹车0中断使能。
 
@@ -5245,22 +5330,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          0：不使能
 
-**外部BRK中断状态寄存器BRKIF**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+外部BRK中断状态寄存器BRKIF
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **BRKIF**
+      - BRKIF
       - 0x420
       - R/W1C
       - 0
@@ -5268,6 +5354,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -5352,46 +5439,47 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:7**
+      - 31:7
       - -
       - -
    - 
 
-      - **6**
+      - 6
       - BRK2_VAL
       - 硬件刹车2的当前电平值
 
          注1：只单纯记录刹车PIN脚当前电平值，与刹车配置信息无关
    - 
 
-      - **5**
+      - 5
       - BRK1_VAL
       - 硬件刹车1的当前电平值
 
          注1：只单纯记录刹车PIN脚当前电平值，与刹车配置信息无关
    - 
 
-      - **4**
+      - 4
       - BRK0_VAL
       - 硬件刹车0的当前电平值
 
          注1：只单纯记录刹车PIN脚当前电平值，与刹车配置信息无关
    - 
 
-      - **3**
+      - 3
       - -
       - -
    - 
 
-      - **2**
+      - 2
       - BRK2
       - 硬件刹车2状态。
 
@@ -5404,7 +5492,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：只有在至少有一组PWM选择了某一个刹车时，该刹车对应的中断状态才能生效，否则会一直保持为0
    - 
 
-      - **1**
+      - 1
       - BRK1
       - 硬件刹车1状态。
 
@@ -5417,7 +5505,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：只有在至少有一组PWM选择了某一个刹车时，该刹车对应的中断状态才能生效，否则会一直保持为0
    - 
 
-      - **0**
+      - 0
       - BRK0
       - 硬件刹车0状态。
 
@@ -5429,22 +5517,23 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：只有在至少有一组PWM选择了某一个刹车时，该刹车对应的中断状态才能生效，否则会一直保持为0
 
-**外部信号当前状态寄存器EVSR**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+外部信号当前状态寄存器EVSR
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
    :widths: 12 9 6 12 33
+   :header-rows: 1
 
    - 
 
-      - **寄存器**
-      - **偏移**
-      - **类型**
-      - **复位值**
-      - **描述**
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
    - 
 
-      - **EVSR**
+      - EVSR
       - 0x424
       - RO
       - 0
@@ -5452,6 +5541,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
 
    - 
 
@@ -5536,20 +5626,21 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
 .. list-table::
    :widths: 7 15 50
+   :header-rows: 1
 
    - 
 
-      - **位域**
-      - **名称**
-      - **描述**
+      - 位域
+      - 名称
+      - 描述
    - 
 
-      - **31:7**
+      - 31:7
       - -
       - -
    - 
 
-      - **6**
+      - 6
       - EV6
       - 外部信号6的当前电平值
 
@@ -5562,7 +5653,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **5**
+      - 5
       - EV5
       - 外部信号5的当前电平值
 
@@ -5575,7 +5666,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **4**
+      - 4
       - EV4
       - 外部信号4的当前电平值
 
@@ -5588,7 +5679,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **3**
+      - 3
       - EV3
       - 外部信号3的当前电平值
 
@@ -5601,7 +5692,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **2**
+      - 2
       - EV2
       - 外部信号2的当前电平值
 
@@ -5614,7 +5705,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **1**
+      - 1
       - EV1
       - 外部信号1的当前电平值
 
@@ -5627,7 +5718,7 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
    - 
 
-      - **0**
+      - 0
       - EV0
       - 外部信号0的当前电平值
 
@@ -5639,6 +5730,153 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 
          注2：当短时间内出现多次脉冲时，CPU不一定能够及时获得准确的当前电平值
 
+软件模拟外部触发源寄存器SWEV
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 12 9 6 12 33
+   :header-rows: 1
+
+   - 
+
+      - 寄存器
+      - 偏移
+      - 类型
+      - 复位值
+      - 描述
+   - 
+
+      - SWEV
+      - 0x428
+      - RW
+      - 0
+      - 外部信号触发
+
+.. list-table::
+   :widths: 9 9 9 9 9 9 9 9
+   :header-rows: 1
+
+   - 
+
+      - **31**
+      - **30**
+      - **29**
+      - **28**
+      - **27**
+      - **26**
+      - **25**
+      - **24**
+   - 
+
+      - -
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+   - 
+
+      - **23**
+      - **22**
+      - **21**
+      - **20**
+      - **19**
+      - **18**
+      - **17**
+      - **16**
+   - 
+
+      - -
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+   - 
+
+      - **15**
+      - **14**
+      - **13**
+      - **12**
+      - **11**
+      - **10**
+      - **9**
+      - **8**
+   - 
+
+      - -
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+   - 
+
+      - **7**
+      - **6**
+      - **5**
+      - **4**
+      - **3**
+      - **2**
+      - **1**
+      - **0**
+   - 
+
+      - -
+      - 
+      - 
+      - 
+      - 
+      - EV2
+      - EV1
+      - EV0
+
+.. list-table::
+   :widths: 6 15 6 8 37
+   :header-rows: 1
+
+   - 
+
+      - **位域**
+      - **名称**
+      - **类型**
+      - **复位值**
+      - **描述**
+   - 
+
+      - 31:3
+      - Reserve
+      - R
+      - 0
+      - 保留
+   - 
+
+      - 2
+      - SWEV2
+      - RW
+      - 0x0
+      - 软件模拟外部触发信号源ex_trig4
+   - 
+
+      - 1
+      - SWEV1
+      - RW
+      - 0x0
+      - 软件模拟外部触发信号源ex_trig3
+   - 
+
+      - 0
+      - SWEV0
+      - RW
+      - 0x0
+      - 软件模拟外部触发信号源ex_trig2
+
 .. |image1| image:: media/image1.emf
 .. |image2| image:: media/image2.emf
 .. |image3| image:: media/image3.emf
@@ -5648,7 +5886,9 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 .. |image7| image:: media/image7.emf
 .. |image8| image:: media/image8.emf
 .. |image9| image:: media/image9.emf
-.. |image10| image:: media/image10.emf
+.. |image10| image:: media/image10.png
+   :width: 5.76181in
+   :height: 3.22917in
 .. |image11| image:: media/image11.emf
 .. |image12| image:: media/image12.emf
 .. |image13| image:: media/image13.emf
@@ -5661,3 +5901,4 @@ PWM_OutMask(PWM0, PWM_CH_A, PWM_EVT_1, 0, PWM_EVT_1,
 .. |image20| image:: media/image20.emf
 .. |image21| image:: media/image21.emf
 .. |image22| image:: media/image22.emf
+.. |image23| image:: media/image23.emf

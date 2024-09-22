@@ -114,17 +114,28 @@ STOP信号为高电平期间停止，低电平期间继续计数，立即生效�
 
    中心对称模式下计数器计数过程波形
 
+
+HWHALT 控制和 SWHALT 控制情况下波形如 :numref:`HWHALT控制和SWHALT控制情况下` 所示：
+
+.. _HWHALT控制和SWHALT控制情况下:
+.. figure:: ./images/HWHALT控制和SWHALT控制情况下.svg
+   :align: center
+   :scale: 100%
+
+   HWHALT 控制和 SWHALT 控制情况下
+
+
 PWM 外部信号配置说明
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _PWM外部信号配置:
-.. figure:: ./images/PWM外部信号配置.svg
+.. figure:: ./images/PWM外部信号配置.png
    :align: center
    :scale: 100%
 
    PWM外部信号配置
 
-*注：ext_event[0~4]分别接PWM_EVT0~4，ext_event[5~6]分别接TIMER0~1*
+.. note:: 注：ext_event[0~1] 分别接 PWM_EVT0~1，ext_event[2~4] 分别接 SWEV0-2，ext_event[5~6] 分别接 TIMER0~1*
 
 硬件刹车控制和软件刹车控制
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
