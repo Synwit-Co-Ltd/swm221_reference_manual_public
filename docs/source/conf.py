@@ -1,48 +1,51 @@
 # Configuration file for the Sphinx documentation builder.
+#
+# For the full list of built-in configuration values, see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Project information
+# -- Project information -----------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'SWM221 参考手册'
 copyright = '2024, 广东华芯微特集成电路有限公司'
 author = 'Synwit'
 release = '1.0'
-version = '0.1.0'
 
-# -- General configuration
+# -- General configuration ---------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 # tight-table
 # https://knowyourtoolset.com/2018/02/controlling-the-width-of-a-table-with-read-the-docs/
 def setup(app):
    app.add_css_file('css/custom.css')
-
-extensions = [
-    'sphinx.ext.duration',
-    'sphinx.ext.doctest',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.intersphinx',
+   
+extensions = ['sphinx.ext.autodoc',
+    #'sphinx_markdown_tables',
+    #'sphinx.ext.autosectionlabel',
+    # 'sphinx.ext.doctest',
+    # 'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    # 'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx_rtd_size',
     'linuxdoc.rstFlatTable',
-]
-
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
-}
-intersphinx_disabled_domains = ['std']
+    # 'docxbuilder',
+    ]
 
 templates_path = ['_templates']
+exclude_patterns = []
 
 language = 'zh_CN'
 
-# -- Options for HTML output
-
+# -- Options for HTML output -------------------------------------------------
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_theme = 'sphinx_rtd_theme'
 
-html_show_sourcelink = False
+html_show_sourcelink = True
 html_static_path = ['_static']
 html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
+
+# html_logo = '_static/logo.ico'
 
 sphinx_rtd_size_width = "100%"
 
@@ -67,7 +70,7 @@ master_doc = 'index'
 # This patterns also effect to html_static_path and html_extra_path
 # 
 # Add included files into the exclude_patterns array
-# See https://github.com/sphinx-doc/sphinx/issues/9779                                     
+# See https://github.com/sphinx-doc/sphinx/issues/9779
 exclude_patterns = [
   '.vscode', 
   'system/存储器映射.rst',
@@ -88,12 +91,13 @@ exclude_patterns = [
   'blocks/*/GPIO.rst',
   'blocks/*/PGA.rst',
 ]
-                
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
 
-latex_engine = "xelatex"
-latex_use_xindy = False
-latex_elements = {
-    "preamble": "\\usepackage[UTF8]{ctex}\n",
-}
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = 'sphinx'
+
+
+# top-level file (index.rst)
+# output file (manual.pdf)
+rinoh_documents = [
+  dict(doc='index', target='manual')  
+]
