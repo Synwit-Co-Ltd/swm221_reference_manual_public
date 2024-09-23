@@ -1,9 +1,4 @@
-Template for the Read the Docs tutorial
-=======================================
+SWM221 Reference Manual
+=======================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
+This repository contain the source files for the Sphinx generator.
