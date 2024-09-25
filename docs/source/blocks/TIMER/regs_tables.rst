@@ -2570,11 +2570,11 @@ ICSR寄存器
 
    * - :cspan:`4` --
 
-     - IC_TIMER2
+     - IC_TIMR2
 
-     - IC_TIMER1
+     - IC_TIMR1
 
-     - IC_TIMER0
+     - IC_TIMR0
 
 
 
@@ -2599,19 +2599,19 @@ ICSR寄存器
 
    * - 2
 
-     - IC_TIMER2
+     - IC_TIMR2
 
      - Timer2输入捕获信号状态
 
    * - 1
 
-     - IC_TIMER1
+     - IC_TIMR1
 
      - Timer1输入捕获信号状态
 
    * - 0
 
-     - IC_TIMER0
+     - IC_TIMR0
 
      - Timer0输入捕获信号状态
 
@@ -2728,11 +2728,11 @@ EN寄存器
 
    * - :cspan:`4` --
 
-     - TIMER2_EN
+     - EN_TIMR2
 
-     - TIMER1_EN
+     - EN_TIMR1
 
-     - TIMER0_EN
+     - EN_TIMR0
 
 
 
@@ -2757,19 +2757,19 @@ EN寄存器
 
    * - 2
 
-     - TIMER2_EN
+     - EN_TIMR2
 
      - 定时器timer2使能。
 
    * - 1
 
-     - TIMER1_EN
+     - EN_TIMR1
 
      - 定时器timer1使能。
 
    * - 0
 
-     - TIMER0_EN
+     - EN_TIMR0
 
      - 定时器timer0使能。
 

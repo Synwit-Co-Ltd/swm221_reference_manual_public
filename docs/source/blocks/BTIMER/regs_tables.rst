@@ -1210,7 +1210,7 @@ EN寄存器
 
      - 0x440
 
-     - RO
+     - RW
 
      - 0x0
 
@@ -1297,13 +1297,13 @@ EN寄存器
 
    * - :cspan:`3` --
 
-     - BTIMER3_EN
+     - EN_TIMR3
 
-     - BTIMER2_EN
+     - EN_TIMR2
 
-     - BTIMER1_EN
+     - EN_TIMR1
 
-     - BTIMER0_EN
+     - EN_TIMR0
 
 
 
@@ -1328,25 +1328,25 @@ EN寄存器
 
    * - 3
 
-     - BTIMER3_EN
+     - EN_TIMR3
 
-     - 定时器timer2使能。
+     - 定时器timer3使能。
 
    * - 2
 
-     - BTIMER2_EN
+     - EN_TIMR2
 
      - 定时器timer2使能。
 
    * - 1
 
-     - BTIMER1_EN
+     - EN_TIMR1
 
      - 定时器timer1使能。
 
    * - 0
 
-     - BTIMER0_EN
+     - EN_TIMR0
 
      - 定时器timer0使能。
 
