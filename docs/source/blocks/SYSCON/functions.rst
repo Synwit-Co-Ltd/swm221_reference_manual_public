@@ -142,3 +142,20 @@ PVDSR.IF位为中断状态位，当芯片供电电压小于等于配置电压时
 
 芯片可以提供128位唯一ID。
 
+IO_FILTER
+^^^^^^^^^
+
+芯片提供一组GPIO滤波器和一组CMP滤波器
+
+-  IO_FILTER0为GPIO输入滤波，对应GPIO为B14, B4, B5, B6
+
+-  IO_FILTER1为CMP输出滤波，对应CMP0_OUT, CMP1_OUT
+
+配置方法：
+
+FILTER0.IOSEL 为 xxx1
+则B14具有滤波功能，xx1x时则B4有滤波功能，x1xx时则B5有滤波功能，1xxx时则B6有滤波功能,为1111时，B14
+B4 B5 B6都有滤波功能
+
+FILTER1.IOSEL
+为xx01时CMP0输出滤波开启，为xx10时CMP1输出滤波功能开启，xx11时CMP0和CMP1都有滤波功能
