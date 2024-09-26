@@ -15,6 +15,7 @@ SWM221 参考手册
   ./system/特性.rst
   ./system/系统架构.rst
 
+  ./blocks/NVIC/index.rst
   ./blocks/SYSCON/index.rst
   ./blocks/PORTCON/index.rst
   ./blocks/GPIO/index.rst
