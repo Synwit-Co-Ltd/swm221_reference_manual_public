@@ -14,15 +14,24 @@
 }
 
 .rst-content th {
-    background-color: #2A86BF;
+    background-color: #2e93d1;
     color: white;
+}
+
+
+.table-left-align {
+  width: 100%;
+}
+
+.table-left-align p {
+  text-align: left;
 }
 
 .tight-table-reg-map {
   table-layout: fixed;
   width: 100%;
   min-width: 600px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .tight-table-reg-map td {
@@ -50,7 +59,7 @@
   table-layout: fixed;
   width: 100%;
   min-width: 600px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .tight-table-reg-info td {
@@ -78,7 +87,7 @@
   table-layout: fixed;
   width: 100%;
   min-width: 600px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .tight-table-reg-fields td {
@@ -95,20 +104,25 @@
   table-layout: fixed;
   width: 100%;
   min-width: 600px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
 }
 
 .tight-table-reg-desc td {
   word-wrap:break-word;
 }
 
-.tight-table-reg-desc th:nth-child(1), td:nth-child(1) {
+.tight-table-reg-desc th:nth-child(1) {
+  text-align: center;
+  width: 9%;
+}
+
+.tight-table-reg-desc td:nth-child(1){
   text-align: center;
   width: 9%;
 }
 
 .tight-table-reg-desc th:nth-child(2) {
-  width: 16%;
+  width: 14%;
 }
 
 .tight-table-reg-desc th:nth-child(3) {

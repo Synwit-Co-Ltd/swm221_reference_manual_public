@@ -37,6 +37,7 @@ SWM231提供了32个中断供外设与核交互，其排列如 :numref:`nvic_tab
 .. list-table:: 中断向量表
    :header-rows: 1
    :widths: 28 44
+   :class: table-left-align
 
    - 
 

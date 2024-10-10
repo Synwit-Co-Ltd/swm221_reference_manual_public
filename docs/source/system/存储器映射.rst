@@ -6,7 +6,7 @@ SWM221控制器为32位通用控制器，提供了4G字节寻址空间，如下�
 
 .. _存储器映射:
 .. flat-table:: 存储器映射
-   :class: tight-table
+   :class: table-left-align
    :header-rows: 1
    :widths: 14 14 44
 

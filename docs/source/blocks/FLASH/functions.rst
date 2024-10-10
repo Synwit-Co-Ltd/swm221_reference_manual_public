@@ -40,7 +40,8 @@ IAP 函数作为片内驻留程序，其提供了针对flash 的相关操作IAP 
 **擦除函数:**
 
 .. list-table::
-  
+   :class: table-left-align
+
    * - **定义函数类型:**
    
    * - typedef uint32_t (\*IAPFunc1) (uint32_t PageNum);
@@ -67,7 +68,8 @@ IAP 函数作为片内驻留程序，其提供了针对flash 的相关操作IAP 
 **写入函数:**
 
 .. list-table::
-  
+   :class: table-left-align
+     
    * - **定义函数类型:**
  
    * - typedef void (\*IAPFunc2) (uint32_t faddr, uint32_t raddr, uint32_t cnt);
