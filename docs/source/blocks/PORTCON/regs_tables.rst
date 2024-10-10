@@ -4,9 +4,8 @@ PORTA_FUNC0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@ PORTA_FUNC0
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A功能配置寄存器0
 
@@ -33,9 +32,7 @@ PORTA_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -122,19 +119,22 @@ PORTA_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31：28
 
      - PIN7
+
+     - R/W
 
      - Port A7功能选择
 
@@ -157,6 +157,8 @@ PORTA_FUNC0
 
      - PIN6
 
+     - R/W
+
      - Port A6功能选择
 
        0000：GPIO
@@ -178,6 +180,8 @@ PORTA_FUNC0
 
      - PIN5
 
+     - R/W
+
      - Port A5功能选择
 
        0000：GPIO
@@ -196,6 +200,8 @@ PORTA_FUNC0
    * - 19：16
 
      - PIN4
+
+     - R/W
 
      - Port A4功能选择
 
@@ -216,6 +222,8 @@ PORTA_FUNC0
 
      - PIN3
 
+     - R/W
+
      - Port A3功能选择
 
        0000：GPIO
@@ -234,6 +242,8 @@ PORTA_FUNC0
    * - 11：8
 
      - PIN2
+
+     - R/W
 
      - Port A2功能选择
 
@@ -254,6 +264,8 @@ PORTA_FUNC0
 
      - PIN1
 
+     - R/W
+
      - Port A1功能选择
 
        0000：GPIO
@@ -272,6 +284,8 @@ PORTA_FUNC0
    * - 3：0
 
      - PIN0
+
+     - R/W
 
      - Port A0功能选择
 
@@ -300,9 +314,8 @@ PORTA_FUNC1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -320,7 +333,7 @@ PORTA_FUNC1
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A功能配置寄存器1
 
@@ -329,9 +342,7 @@ PORTA_FUNC1
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -418,19 +429,22 @@ PORTA_FUNC1
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31：28
 
      - PIN15
+
+     - R/W
 
      - Port A15功能选择
 
@@ -448,6 +462,8 @@ PORTA_FUNC1
    * - 27：24
 
      - PIN14
+
+     - R/W
 
      - Port A14功能选择
 
@@ -468,6 +484,8 @@ PORTA_FUNC1
 
      - PIN13
 
+     - R/W
+
      - Port A13功能选择
 
        0000：GPIO
@@ -487,6 +505,8 @@ PORTA_FUNC1
 
      - PIN12
 
+     - R/W
+
      - Port A12功能选择
 
        0000：GPIO
@@ -505,6 +525,8 @@ PORTA_FUNC1
    * - 15：12
 
      - PIN11
+
+     - R/W
 
      - Port A11功能选择
 
@@ -527,6 +549,8 @@ PORTA_FUNC1
 
      - PIN10
 
+     - R/W
+
      - Port A10功能选择
 
        0000：GPIO
@@ -548,6 +572,8 @@ PORTA_FUNC1
 
      - PIN9
 
+     - R/W
+
      - Port A9功能选择
 
        0000：GPIO
@@ -568,6 +594,8 @@ PORTA_FUNC1
    * - 3：0
 
      - PIN8
+
+     - R/W
 
      - Port A8功能选择
 
@@ -592,9 +620,8 @@ PORTB_FUNC0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -612,7 +639,7 @@ PORTB_FUNC0
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口B功能配置寄存器0
 
@@ -621,9 +648,7 @@ PORTB_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -710,19 +735,22 @@ PORTB_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31：28
 
      - PIN7
+
+     - R/W
 
      - Port B7功能选择
 
@@ -746,6 +774,8 @@ PORTB_FUNC0
    * - 27：24
 
      - PIN6
+
+     - R/W
 
      - Port B6功能选择
 
@@ -772,6 +802,8 @@ PORTB_FUNC0
 
      - PIN5
 
+     - R/W
+
      - Port B5功能选择
 
        0000：GPIO
@@ -797,6 +829,8 @@ PORTB_FUNC0
 
      - PIN4
 
+     - R/W
+
      - Port B4功能选择
 
        0000：GPIO
@@ -820,6 +854,8 @@ PORTB_FUNC0
 
      - PIN3
 
+     - R/W
+
      - Port B3功能选择
 
        0000：GPIO
@@ -840,6 +876,8 @@ PORTB_FUNC0
    * - 11：8
 
      - PIN2
+
+     - R/W
 
      - Port B2功能选择
 
@@ -864,6 +902,8 @@ PORTB_FUNC0
 
      - PIN1
 
+     - R/W
+
      - Port B1功能选择
 
        0000：GPIO
@@ -886,6 +926,8 @@ PORTB_FUNC0
    * - 3：0
 
      - PIN0
+
+     - R/W
 
      - Port B0功能选择
 
@@ -914,9 +956,8 @@ PORTB_FUNC1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -934,7 +975,7 @@ PORTB_FUNC1
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口B功能配置寄存器1
 
@@ -943,9 +984,7 @@ PORTB_FUNC1
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1032,19 +1071,22 @@ PORTB_FUNC1
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31：28
 
      - PIN15
+
+     - R/W
 
      - Port B15功能选择
 
@@ -1071,6 +1113,8 @@ PORTB_FUNC1
 
      - PIN14
 
+     - R/W
+
      - Port B14功能选择
 
        0000：GPIO
@@ -1094,6 +1138,8 @@ PORTB_FUNC1
 
      - PIN13
 
+     - R/W
+
      - Port B13功能选择
 
        0000：GPIO
@@ -1108,6 +1154,8 @@ PORTB_FUNC1
    * - 19：16
 
      - PIN12
+
+     - R/W
 
      - Port B12功能选择
 
@@ -1132,6 +1180,8 @@ PORTB_FUNC1
 
      - PIN11
 
+     - R/W
+
      - Port B11功能选择
 
        0000：GPIO
@@ -1154,6 +1204,8 @@ PORTB_FUNC1
    * - 11：8
 
      - PIN10
+
+     - R/W
 
      - Port B10功能选择
 
@@ -1178,6 +1230,8 @@ PORTB_FUNC1
 
      - PIN9
 
+     - R/W
+
      - Port B9功能选择
 
        0000：GPIO
@@ -1192,6 +1246,8 @@ PORTB_FUNC1
    * - 3：0
 
      - PIN8
+
+     - R/W
 
      - Port B8功能选择
 
@@ -1214,9 +1270,8 @@ PORTC_FUNC0
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1234,7 +1289,7 @@ PORTC_FUNC0
 
      - R/W
 
-     - 0x00
+     - 0x00000011
 
      - 端口C功能配置寄存器0
 
@@ -1243,9 +1298,7 @@ PORTC_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1328,13 +1381,14 @@ PORTC_FUNC0
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1342,11 +1396,15 @@ PORTC_FUNC0
 
      - --
 
+     - R/W
+
      - --
 
    * - 15：12
 
      - PIN3
+
+     - R/W
 
      - Port C3功能选择
 
@@ -1371,6 +1429,8 @@ PORTC_FUNC0
 
      - PIN2
 
+     - R/W
+
      - Port C2功能选择
 
        0000：GPIO
@@ -1394,6 +1454,8 @@ PORTC_FUNC0
 
      - PIN1
 
+     - R/W
+
      - Port C1功能选择
 
        0000：GPIO
@@ -1410,6 +1472,8 @@ PORTC_FUNC0
    * - 3：0
 
      - PIN0
+
+     - R/W
 
      - Port C0功能选择
 
@@ -1438,9 +1502,8 @@ PORTA端口上拉功能寄存器PULLU_A
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1458,7 +1521,7 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A上拉使能控制寄存器
 
@@ -1467,9 +1530,7 @@ PORTA端口上拉功能寄存器PULLU_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1576,13 +1637,14 @@ PORTA端口上拉功能寄存器PULLU_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1590,11 +1652,15 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 上拉电阻使能
 
@@ -1605,6 +1671,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN14
 
+     - R/W
+
      - PIN14 上拉电阻使能
 
        0：禁能    1：使能
@@ -1613,6 +1681,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 上拉电阻使能
 
@@ -1623,6 +1693,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN12
 
+     - R/W
+
      - PIN12上拉电阻使能
 
        0：禁能    1：使能
@@ -1631,6 +1703,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 上拉电阻使能
 
@@ -1641,6 +1715,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN10
 
+     - R/W
+
      - PIN10 上拉电阻使能
 
        0：禁能    1：使能
@@ -1649,6 +1725,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 上拉电阻使能
 
@@ -1659,6 +1737,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN8
 
+     - R/W
+
      - PIN8 上拉电阻使能
 
        0：禁能    1：使能
@@ -1667,6 +1747,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7上拉电阻使能
 
@@ -1677,6 +1759,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN6
 
+     - R/W
+
      - PIN6上拉电阻使能
 
        0：禁能    1：使能
@@ -1685,6 +1769,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5上拉电阻使能
 
@@ -1695,6 +1781,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN4
 
+     - R/W
+
      - PIN4上拉电阻使能
 
        0：禁能    1：使能
@@ -1703,6 +1791,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3上拉电阻使能
 
@@ -1713,6 +1803,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN2
 
+     - R/W
+
      - PIN2上拉电阻使能
 
        0：禁能    1：使能
@@ -1722,6 +1814,8 @@ PORTA端口上拉功能寄存器PULLU_A
 
      - PIN1
 
+     - R/W
+
      - PIN1上拉电阻使能
 
        0：禁能    1：使能
@@ -1730,6 +1824,8 @@ PORTA端口上拉功能寄存器PULLU_A
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0上拉电阻使能
 
@@ -1744,9 +1840,8 @@ PORTB端口上拉功能寄存器PULLU_B
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1764,7 +1859,7 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - R/W
 
-     - 0x00
+     - 0x00009000
 
      - 端口B上拉使能控制寄存器
 
@@ -1773,9 +1868,7 @@ PORTB端口上拉功能寄存器PULLU_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1882,13 +1975,14 @@ PORTB端口上拉功能寄存器PULLU_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1896,11 +1990,15 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 上拉电阻使能
 
@@ -1911,6 +2009,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN14
 
+     - R/W
+
      - PIN14 上拉电阻使能
 
        0：禁能    1：使能
@@ -1919,6 +2019,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 上拉电阻使能
 
@@ -1929,6 +2031,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN12
 
+     - R/W
+
      - PIN12上拉电阻使能
 
        0：禁能    1：使能
@@ -1937,6 +2041,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 上拉电阻使能
 
@@ -1947,6 +2053,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN10
 
+     - R/W
+
      - PIN10 上拉电阻使能
 
        0：禁能    1：使能
@@ -1955,6 +2063,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 上拉电阻使能
 
@@ -1965,6 +2075,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN8
 
+     - R/W
+
      - PIN8 上拉电阻使能
 
        0：禁能    1：使能
@@ -1973,6 +2085,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7上拉电阻使能
 
@@ -1983,6 +2097,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN6
 
+     - R/W
+
      - PIN6上拉电阻使能
 
        0：禁能    1：使能
@@ -1991,6 +2107,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5上拉电阻使能
 
@@ -2001,6 +2119,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN4
 
+     - R/W
+
      - PIN4上拉电阻使能
 
        0：禁能    1：使能
@@ -2009,6 +2129,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3上拉电阻使能
 
@@ -2019,6 +2141,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN2
 
+     - R/W
+
      - PIN2上拉电阻使能
 
        0：禁能    1：使能
@@ -2028,6 +2152,8 @@ PORTB端口上拉功能寄存器PULLU_B
 
      - PIN1
 
+     - R/W
+
      - PIN1上拉电阻使能
 
        0：禁能    1：使能
@@ -2036,6 +2162,8 @@ PORTB端口上拉功能寄存器PULLU_B
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0上拉电阻使能
 
@@ -2050,9 +2178,8 @@ PORTC端口上拉功能寄存器PULLU_C
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2070,7 +2197,7 @@ PORTC端口上拉功能寄存器PULLU_C
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口C上拉使能控制寄存器
 
@@ -2079,9 +2206,7 @@ PORTC端口上拉功能寄存器PULLU_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2168,13 +2293,14 @@ PORTC端口上拉功能寄存器PULLU_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2182,11 +2308,15 @@ PORTC端口上拉功能寄存器PULLU_C
 
      - --
 
+     - R/W
+
      - --
 
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3上拉电阻使能
 
@@ -2197,6 +2327,8 @@ PORTC端口上拉功能寄存器PULLU_C
 
      - PIN2
 
+     - R/W
+
      - PIN2上拉电阻使能
 
        0：禁能    1：使能
@@ -2206,6 +2338,8 @@ PORTC端口上拉功能寄存器PULLU_C
 
      - PIN1
 
+     - R/W
+
      - PIN1上拉电阻使能
 
        0：禁能    1：使能
@@ -2214,6 +2348,8 @@ PORTC端口上拉功能寄存器PULLU_C
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0上拉电阻使能
 
@@ -2228,9 +2364,8 @@ PORTA端口下拉功能寄存器PULLD_A
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2248,7 +2383,7 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A下拉使能控制寄存器
 
@@ -2257,9 +2392,7 @@ PORTA端口下拉功能寄存器PULLD_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2366,13 +2499,14 @@ PORTA端口下拉功能寄存器PULLD_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2380,11 +2514,15 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 下拉电阻使能
 
@@ -2395,6 +2533,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN14
 
+     - R/W
+
      - PIN14下拉电阻使能
 
        0：禁能    1：使能
@@ -2403,6 +2543,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13下拉电阻使能
 
@@ -2413,6 +2555,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN12
 
+     - R/W
+
      - PIN12下拉电阻使能
 
        0：禁能    1：使能
@@ -2421,6 +2565,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11下拉电阻使能
 
@@ -2431,6 +2577,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN10
 
+     - R/W
+
      - PIN10下拉电阻使能
 
        0：禁能    1：使能
@@ -2439,6 +2587,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9下拉电阻使能
 
@@ -2449,6 +2599,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN8
 
+     - R/W
+
      - PIN8下拉电阻使能
 
        0：禁能    1：使能
@@ -2457,6 +2609,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7下拉电阻使能
 
@@ -2467,6 +2621,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN6
 
+     - R/W
+
      - PIN6下拉电阻使能
 
        0：禁能    1：使能
@@ -2475,6 +2631,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5下拉电阻使能
 
@@ -2485,6 +2643,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN4
 
+     - R/W
+
      - PIN4下拉电阻使能
 
        0：禁能    1：使能
@@ -2493,6 +2653,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3下拉电阻使能
 
@@ -2503,6 +2665,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN2
 
+     - R/W
+
      - PIN2下拉电阻使能
 
        0：禁能    1：使能
@@ -2512,6 +2676,8 @@ PORTA端口下拉功能寄存器PULLD_A
 
      - PIN1
 
+     - R/W
+
      - PIN1下拉电阻使能
 
        0：禁能    1：使能
@@ -2520,6 +2686,8 @@ PORTA端口下拉功能寄存器PULLD_A
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0下拉电阻使能
 
@@ -2534,9 +2702,8 @@ PORTB端口下拉功能寄存器PULLD_B
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2554,7 +2721,7 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - R/W
 
-     - 0x00
+     - 0x00000C00
 
      - 端口B下拉使能控制寄存器
 
@@ -2563,9 +2730,7 @@ PORTB端口下拉功能寄存器PULLD_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2672,13 +2837,14 @@ PORTB端口下拉功能寄存器PULLD_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2686,11 +2852,15 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 下拉电阻使能
 
@@ -2701,6 +2871,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN14
 
+     - R/W
+
      - PIN14下拉电阻使能
 
        0：禁能    1：使能
@@ -2709,6 +2881,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13下拉电阻使能
 
@@ -2719,6 +2893,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN12
 
+     - R/W
+
      - PIN12下拉电阻使能
 
        0：禁能    1：使能
@@ -2727,6 +2903,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11下拉电阻使能
 
@@ -2737,6 +2915,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN10
 
+     - R/W
+
      - PIN10下拉电阻使能
 
        0：禁能    1：使能
@@ -2745,6 +2925,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9下拉电阻使能
 
@@ -2755,6 +2937,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN8
 
+     - R/W
+
      - PIN8下拉电阻使能
 
        0：禁能    1：使能
@@ -2763,6 +2947,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7下拉电阻使能
 
@@ -2773,6 +2959,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN6
 
+     - R/W
+
      - PIN6下拉电阻使能
 
        0：禁能    1：使能
@@ -2781,6 +2969,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5下拉电阻使能
 
@@ -2791,6 +2981,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN4
 
+     - R/W
+
      - PIN4下拉电阻使能
 
        0：禁能    1：使能
@@ -2799,6 +2991,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3下拉电阻使能
 
@@ -2809,6 +3003,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN2
 
+     - R/W
+
      - PIN2下拉电阻使能
 
        0：禁能    1：使能
@@ -2818,6 +3014,8 @@ PORTB端口下拉功能寄存器PULLD_B
 
      - PIN1
 
+     - R/W
+
      - PIN1下拉电阻使能
 
        0：禁能    1：使能
@@ -2826,6 +3024,8 @@ PORTB端口下拉功能寄存器PULLD_B
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0下拉电阻使能
 
@@ -2840,9 +3040,8 @@ PORTC端口下拉功能寄存器PULLD_C
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2860,7 +3059,7 @@ PORTC端口下拉功能寄存器PULLD_C
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口C下拉使能控制寄存器
 
@@ -2869,9 +3068,7 @@ PORTC端口下拉功能寄存器PULLD_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2958,13 +3155,14 @@ PORTC端口下拉功能寄存器PULLD_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2972,11 +3170,15 @@ PORTC端口下拉功能寄存器PULLD_C
 
      - --
 
+     - R/W
+
      - --
 
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3下拉电阻使能
 
@@ -2987,6 +3189,8 @@ PORTC端口下拉功能寄存器PULLD_C
 
      - PIN2
 
+     - R/W
+
      - PIN2下拉电阻使能
 
        0：禁能    1：使能
@@ -2996,6 +3200,8 @@ PORTC端口下拉功能寄存器PULLD_C
 
      - PIN1
 
+     - R/W
+
      - PIN1下拉电阻使能
 
        0：禁能    1：使能
@@ -3004,6 +3210,8 @@ PORTC端口下拉功能寄存器PULLD_C
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0下拉电阻使能
 
@@ -3018,9 +3226,8 @@ PORTA端口输入使能功能寄存器INEN_A
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -3038,7 +3245,7 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A输入使能控制寄存器
 
@@ -3047,9 +3254,7 @@ PORTA端口输入使能功能寄存器INEN_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -3156,13 +3361,14 @@ PORTA端口输入使能功能寄存器INEN_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -3170,11 +3376,15 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 输入使能
 
@@ -3185,6 +3395,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN14
 
+     - R/W
+
      - PIN14 输入使能
 
        0：禁能    1：使能
@@ -3193,6 +3405,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 输入使能
 
@@ -3203,6 +3417,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN12
 
+     - R/W
+
      - PIN12 输入使能
 
        0：禁能    1：使能
@@ -3211,6 +3427,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 输入使能
 
@@ -3221,6 +3439,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN10
 
+     - R/W
+
      - PIN10 输入使能
 
        0：禁能    1：使能
@@ -3229,6 +3449,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 输入使能
 
@@ -3239,6 +3461,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN8
 
+     - R/W
+
      - PIN8 输入使能
 
        0：禁能    1：使能
@@ -3247,6 +3471,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7输入使能
 
@@ -3257,6 +3483,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN6
 
+     - R/W
+
      - PIN6输入使能
 
        0：禁能    1：使能
@@ -3265,6 +3493,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5输入使能
 
@@ -3275,6 +3505,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN4
 
+     - R/W
+
      - PIN4输入使能
 
        0：禁能    1：使能
@@ -3283,6 +3515,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3输入使能
 
@@ -3293,6 +3527,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN2
 
+     - R/W
+
      - PIN2输入使能
 
        0：禁能    1：使能
@@ -3302,6 +3538,8 @@ PORTA端口输入使能功能寄存器INEN_A
 
      - PIN1
 
+     - R/W
+
      - PIN1输入使能
 
        0：禁能    1：使能
@@ -3310,6 +3548,8 @@ PORTA端口输入使能功能寄存器INEN_A
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0输入使能
 
@@ -3324,9 +3564,8 @@ PORTB端口输入使能功能寄存器INEN_B
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -3344,7 +3583,7 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - R/W
 
-     - 0x00
+     - 0x00009C00
 
      - 端口B输入使能控制寄存器
 
@@ -3353,9 +3592,7 @@ PORTB端口输入使能功能寄存器INEN_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -3462,13 +3699,14 @@ PORTB端口输入使能功能寄存器INEN_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -3476,11 +3714,15 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 输入使能
 
@@ -3491,6 +3733,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN14
 
+     - R/W
+
      - PIN14 输入使能
 
        0：禁能    1：使能
@@ -3499,6 +3743,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 输入使能
 
@@ -3509,6 +3755,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN12
 
+     - R/W
+
      - PIN12 输入使能
 
        0：禁能    1：使能
@@ -3517,6 +3765,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 输入使能
 
@@ -3527,6 +3777,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN10
 
+     - R/W
+
      - PIN10 输入使能
 
        0：禁能    1：使能
@@ -3535,6 +3787,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 输入使能
 
@@ -3545,6 +3799,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN8
 
+     - R/W
+
      - PIN8 输入使能
 
        0：禁能    1：使能
@@ -3553,6 +3809,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7输入使能
 
@@ -3563,6 +3821,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN6
 
+     - R/W
+
      - PIN6输入使能
 
        0：禁能    1：使能
@@ -3571,6 +3831,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5输入使能
 
@@ -3581,6 +3843,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN4
 
+     - R/W
+
      - PIN4输入使能
 
        0：禁能    1：使能
@@ -3589,6 +3853,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3输入使能
 
@@ -3599,6 +3865,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN2
 
+     - R/W
+
      - PIN2输入使能
 
        0：禁能    1：使能
@@ -3608,6 +3876,8 @@ PORTB端口输入使能功能寄存器INEN_B
 
      - PIN1
 
+     - R/W
+
      - PIN1输入使能
 
        0：禁能    1：使能
@@ -3616,6 +3886,8 @@ PORTB端口输入使能功能寄存器INEN_B
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0输入使能
 
@@ -3630,9 +3902,8 @@ PORTC端口输入使能功能寄存器INEN_C
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -3650,7 +3921,7 @@ PORTC端口输入使能功能寄存器INEN_C
 
      - R/W
 
-     - 0x00
+     - 0x00000003
 
      - 端口C输入使能控制寄存器
 
@@ -3659,9 +3930,7 @@ PORTC端口输入使能功能寄存器INEN_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -3748,13 +4017,14 @@ PORTC端口输入使能功能寄存器INEN_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -3762,11 +4032,15 @@ PORTC端口输入使能功能寄存器INEN_C
 
      - --
 
+     - R/W
+
      - --
 
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3输入使能
 
@@ -3777,6 +4051,8 @@ PORTC端口输入使能功能寄存器INEN_C
 
      - PIN2
 
+     - R/W
+
      - PIN2输入使能
 
        0：禁能    1：使能
@@ -3786,6 +4062,8 @@ PORTC端口输入使能功能寄存器INEN_C
 
      - PIN1
 
+     - R/W
+
      - PIN1输入使能
 
        0：禁能    1：使能
@@ -3794,6 +4072,8 @@ PORTC端口输入使能功能寄存器INEN_C
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0输入使能
 
@@ -3808,9 +4088,8 @@ PORTA端口开漏功能寄存器OPEND_A
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -3828,7 +4107,7 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口A开漏使能控制寄存器
 
@@ -3837,9 +4116,7 @@ PORTA端口开漏功能寄存器OPEND_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -3946,13 +4223,14 @@ PORTA端口开漏功能寄存器OPEND_A
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -3960,11 +4238,15 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 开漏使能
 
@@ -3977,6 +4259,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN14
 
+     - R/W
+
      - PIN14 开漏使能
 
        0：推挽模式
@@ -3987,6 +4271,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 开漏使能
 
@@ -3999,6 +4285,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN12
 
+     - R/W
+
      - PIN12 开漏使能
 
        0：推挽模式
@@ -4009,6 +4297,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 开漏使能
 
@@ -4021,6 +4311,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN10
 
+     - R/W
+
      - PIN10 开漏使能
 
        0：推挽模式
@@ -4031,6 +4323,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 开漏使能
 
@@ -4043,6 +4337,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN8
 
+     - R/W
+
      - PIN8 开漏使能
 
        0：推挽模式
@@ -4053,6 +4349,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7开漏使能
 
@@ -4065,6 +4363,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN6
 
+     - R/W
+
      - PIN6开漏使能
 
        0：推挽模式
@@ -4075,6 +4375,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5开漏使能
 
@@ -4087,6 +4389,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN4
 
+     - R/W
+
      - PIN4开漏使能
 
        0：推挽模式
@@ -4097,6 +4401,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3开漏使能
 
@@ -4109,6 +4415,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN2
 
+     - R/W
+
      - PIN2开漏使能
 
        0：推挽模式
@@ -4120,6 +4428,8 @@ PORTA端口开漏功能寄存器OPEND_A
 
      - PIN1
 
+     - R/W
+
      - PIN1开漏使能
 
        0：推挽模式
@@ -4130,6 +4440,8 @@ PORTA端口开漏功能寄存器OPEND_A
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0开漏使能
 
@@ -4146,9 +4458,8 @@ PORTB端口开漏功能寄存器OPEND_B
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -4166,7 +4477,7 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口B开漏使能控制寄存器
 
@@ -4175,9 +4486,7 @@ PORTB端口开漏功能寄存器OPEND_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -4284,13 +4593,14 @@ PORTB端口开漏功能寄存器OPEND_B
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -4298,11 +4608,15 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - --
 
+     - R/W
+
      - --
 
    * - 15
 
      - PIN15
+
+     - R/W
 
      - PIN15 开漏使能
 
@@ -4315,6 +4629,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN14
 
+     - R/W
+
      - PIN14 开漏使能
 
        0：推挽模式
@@ -4325,6 +4641,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 13
 
      - PIN13
+
+     - R/W
 
      - PIN13 开漏使能
 
@@ -4337,6 +4655,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN12
 
+     - R/W
+
      - PIN12 开漏使能
 
        0：推挽模式
@@ -4347,6 +4667,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 11
 
      - PIN11
+
+     - R/W
 
      - PIN11 开漏使能
 
@@ -4359,6 +4681,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN10
 
+     - R/W
+
      - PIN10 开漏使能
 
        0：推挽模式
@@ -4369,6 +4693,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 9
 
      - PIN9
+
+     - R/W
 
      - PIN9 开漏使能
 
@@ -4381,6 +4707,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN8
 
+     - R/W
+
      - PIN8 开漏使能
 
        0：推挽模式
@@ -4391,6 +4719,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 7
 
      - PIN7
+
+     - R/W
 
      - PIN7开漏使能
 
@@ -4403,6 +4733,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN6
 
+     - R/W
+
      - PIN6开漏使能
 
        0：推挽模式
@@ -4413,6 +4745,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 5
 
      - PIN5
+
+     - R/W
 
      - PIN5开漏使能
 
@@ -4425,6 +4759,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN4
 
+     - R/W
+
      - PIN4开漏使能
 
        0：推挽模式
@@ -4435,6 +4771,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3开漏使能
 
@@ -4447,6 +4785,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN2
 
+     - R/W
+
      - PIN2开漏使能
 
        0：推挽模式
@@ -4458,6 +4798,8 @@ PORTB端口开漏功能寄存器OPEND_B
 
      - PIN1
 
+     - R/W
+
      - PIN1开漏使能
 
        0：推挽模式
@@ -4468,6 +4810,8 @@ PORTB端口开漏功能寄存器OPEND_B
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0开漏使能
 
@@ -4484,9 +4828,8 @@ PORTC端口开漏功能寄存器OPEND_C
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -4504,7 +4847,7 @@ PORTC端口开漏功能寄存器OPEND_C
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 端口C开漏使能控制寄存器
 
@@ -4513,9 +4856,7 @@ PORTC端口开漏功能寄存器OPEND_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -4602,13 +4943,14 @@ PORTC端口开漏功能寄存器OPEND_C
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -4616,11 +4958,15 @@ PORTC端口开漏功能寄存器OPEND_C
 
      - --
 
+     - R/W
+
      - --
 
    * - 3
 
      - PIN3
+
+     - R/W
 
      - PIN3开漏使能
 
@@ -4633,6 +4979,8 @@ PORTC端口开漏功能寄存器OPEND_C
 
      - PIN2
 
+     - R/W
+
      - PIN2开漏使能
 
        0：推挽模式
@@ -4644,6 +4992,8 @@ PORTC端口开漏功能寄存器OPEND_C
 
      - PIN1
 
+     - R/W
+
      - PIN1开漏使能
 
        0：推挽模式
@@ -4654,6 +5004,8 @@ PORTC端口开漏功能寄存器OPEND_C
    * - 0
 
      - PIN0
+
+     - R/W
 
      - PIN0开漏使能
 

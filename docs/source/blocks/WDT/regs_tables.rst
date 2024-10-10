@@ -4,9 +4,8 @@ RSTVAL寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@ RSTVAL寄存器
 
      - R/W
 
-     - 0
+     - 0x0000FFFF
 
      - WDT计数器的复位计数初始值
 
@@ -33,9 +32,7 @@ RSTVAL寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -114,13 +111,14 @@ RSTVAL寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -128,11 +126,15 @@ RSTVAL寄存器
 
      - --
 
+     - RO
+
      - 保留位
 
    * - 15:0
 
      - WDTRstValue
+
+     - R/W
 
      - WDT计数器的复位计数初始值。
 
@@ -149,9 +151,8 @@ INTVAL寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -169,7 +170,7 @@ INTVAL寄存器
 
      - R/W
 
-     - 0
+     - 0x0000FFFF
 
      - WDT计数器的中断计数初始值
 
@@ -178,9 +179,7 @@ INTVAL寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -259,13 +258,14 @@ INTVAL寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -273,11 +273,15 @@ INTVAL寄存器
 
      - --
 
+     - RO
+
      - 保留位
 
    * - 15:0
 
      - WDTIntValue
+
+     - R/W
 
      - WDT计数器的中断计数初始值。
 
@@ -298,9 +302,8 @@ CR控制寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -318,7 +321,7 @@ CR控制寄存器
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - 控制寄存器
 
@@ -327,9 +330,7 @@ CR控制寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -418,13 +419,14 @@ CR控制寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -432,11 +434,15 @@ CR控制寄存器
 
      - REVERSED
 
+     - RO
+
      - --
 
    * - 11:8
 
      - WDTPRCSEL
+
+     - R/W
 
      - 看门狗计数时钟预分频寄存器
 
@@ -477,11 +483,15 @@ CR控制寄存器
 
      - REVERSED
 
+     - RO
+
      - 
 
    * - 3
 
-     - WDTPRCSEL
+     - WINEN
+
+     - R/W
 
      - WDT窗口功能使能
 
@@ -492,7 +502,9 @@ CR控制寄存器
 
    * - 2
 
-     - REVERSED
+     - INTEN
+
+     - R/W
 
      - WDT中断输出使能位
 
@@ -503,7 +515,9 @@ CR控制寄存器
 
    * - 1
 
-     - WINEN
+     - RSTEN
+
+     - R/W
 
      - WDT复位输出使能位
 
@@ -514,7 +528,9 @@ CR控制寄存器
 
    * - 0
 
-     - INTEN
+     - WDTEN
+
+     - R/W
 
      - WDT启动位
 
@@ -531,9 +547,8 @@ IF寄存器
 ^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -551,7 +566,7 @@ IF寄存器
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 中断状态寄存器
 
@@ -560,9 +575,7 @@ IF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -643,13 +656,14 @@ IF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -657,11 +671,15 @@ IF寄存器
 
      - --
 
+     - RO
+
      - 
 
    * - 0
 
      - WDTIS
+
+     - R,W1C
 
      - WDT中断位，高有效
 
@@ -676,9 +694,8 @@ FEED寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -696,7 +713,7 @@ FEED寄存器
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - 重启寄存器
 
@@ -705,9 +722,7 @@ FEED寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -786,13 +801,14 @@ FEED寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -800,11 +816,15 @@ FEED寄存器
 
      - --
 
+     - RO
+
      - 保留位
 
    * - 7:0
 
      - WDTCR
+
+     - WO
 
      - 看门狗重启计数器寄存器
 

@@ -4,9 +4,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -20,11 +19,11 @@
 
    * - CR
 
-     - 0x0
+     - 0x00
 
      - R/W
 
-     - 0x0000_010C
+     - 0x00000018
 
      - 通用配置寄存器
 
@@ -33,9 +32,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -122,13 +119,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -136,11 +134,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 6:3
 
      - DNF
+
+     - R/W
 
      - Receive SDA、SCL数字噪声滤波（Digital Noise Filter）。
 
@@ -157,6 +159,8 @@
 
      - HS
 
+     - R/WAC
+
      - High-Speed mode。仅在master模式下有效。
 
        0：Standard-mode, Fast-mode, Fast-mode Plus。SCL为open-drain输出。
@@ -168,6 +172,8 @@
 
      - MASTER
 
+     - R/W
+
      - 模式控制。
 
        0：slave模式
@@ -178,6 +184,8 @@
    * - 0
 
      - EN
+
+     - R/W
 
      - i2c总线使能。
 
@@ -194,9 +202,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -210,11 +217,11 @@
 
    * - SR
 
-     - 0x4
+     - 0x04
 
      - RO
 
-     - 0x0000_0006
+     - 0x00000000
 
      - 通用状态寄存器
 
@@ -223,9 +230,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -310,13 +315,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -324,11 +330,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 2
 
      - SDA
+
+     - RO
 
      - I2C SDA状态。不受I2C总线使能影响。
 
@@ -341,6 +351,8 @@
 
      - SCL
 
+     - RO
+
      - I2C SCL状态。不受I2C总线使能影响。
 
        0：I2C SCL为低。
@@ -351,6 +363,8 @@
    * - 0
 
      - BUSY
+
+     - RO
 
      - 总线忙状态。本位不受CR.EN位控制，当EN不使能时，仍然检测总线忙状态。
 
@@ -367,9 +381,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -383,11 +396,11 @@
 
    * - TR
 
-     - 0x8
+     - 0x08
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000002
 
      - 通用传输寄存器
 
@@ -396,9 +409,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -493,13 +504,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -507,11 +519,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 13:12
 
      - SLVRDS
+
+     - RO
 
      - Slave接收到的数据类型。仅在Slave模式有效。
 
@@ -528,6 +544,8 @@
 
      - SLVSTR
 
+     - RO
+
      - Slave clock stretching忙状态。仅在slave模式有效。
 
        0：无clock stretching。
@@ -538,6 +556,8 @@
    * - 10
 
      - SLVWR
+
+     - RO
 
      - Slave写状态。仅在slave模式有效。
 
@@ -550,6 +570,8 @@
 
      - SLVRDD
 
+     - RO
+
      - Slave读状态。仅在slave模式有效。
 
        1：Slave接收到master的读请求后有效。
@@ -560,6 +582,8 @@
    * - 8
 
      - SLVACT
+
+     - RO
 
      - Slave活跃状态。仅在slave模式有效。
 
@@ -572,11 +596,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 2
 
      - TXCLR
+
+     - RO
 
      - 发送数据寄存器清空。硬件自动清除。
 
@@ -589,6 +617,8 @@
 
      - RXACK
 
+     - RO
+
      - 当作为transmitter时，接收到的ACK/NACK。硬件置位，TXDONE有效后即可查询此位；接收到Sr或STOP会将此位清零。
 
        0：接收到ACK
@@ -599,6 +629,8 @@
    * - 0
 
      - TXACK
+
+     - RO
 
      - 当作为receiver时，反馈ACK/NACK。
 
@@ -623,9 +655,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -639,11 +670,11 @@
 
    * - RXDATA
 
-     - 0xC
+     - 0x0C
 
      - RO
 
-     - 0x0000_0000
+     - 0x00000000
 
      - 接收数据寄存器
 
@@ -652,9 +683,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -733,13 +762,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -747,11 +777,15 @@
 
      - --
 
+     - 
+
      - --
 
    * - 7:0
 
      - RXDATA
+
+     - 
 
      - 接收数据寄存器
 
@@ -770,9 +804,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -790,7 +823,7 @@
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - 发送数据寄存器
 
@@ -799,9 +832,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -880,13 +911,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -894,11 +926,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 7:0
 
      - TXDATA
+
+     - R/W
 
      - 发送数据寄存器
 
@@ -913,9 +949,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -933,7 +968,7 @@
 
      - R/W
 
-     - 0x0000_0001
+     - 0x00000001
 
      - 中断标志寄存器
 
@@ -942,9 +977,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1041,13 +1074,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1055,11 +1089,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 17
 
      - MLTO
+
+     - R/W1C
 
      - Master SCL LOW超时。写1清除。仅在master模式有效。
 
@@ -1074,6 +1112,8 @@
 
      - AL
 
+     - R/W1C
+
      - Master仲裁丢失总线。写1清除。仅在master模式有效。
 
        0：无仲裁丢失总线控制权。
@@ -1085,11 +1125,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 9
 
      - RXSTO
+
+     - R/W1C
 
      - Slave检测到STOP。写1清除。仅在slave模式下有效。
 
@@ -1102,6 +1146,8 @@
 
      - RXSTA
 
+     - R/W1C
+
      - Slave检测到START。写1清除。仅在slave模式下有效。
 
        0：slave未检测到START。
@@ -1113,11 +1159,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 4
 
      - RXDONE
+
+     - R/W1C
 
      - 接收结束。写1清除，包含ACK/NACK时间。
 
@@ -1138,6 +1188,8 @@
 
      - TXDONE
 
+     - R/W1C
+
      - 发送结束。写1清除，包含ACK/NACK时间。
 
        0：发送未结束，或没有发送。
@@ -1151,6 +1203,8 @@
 
      - RXOV
 
+     - R/W1C
+
      - 接收数据寄存器溢出。软件写1清除。（更新的时刻点，不包含ACK/NACK发送）
 
        0：无溢出。
@@ -1163,6 +1217,8 @@
    * - 1
 
      - RXNE
+
+     - R/W1C
 
      - 接收数据寄存器非空。
 
@@ -1189,6 +1245,8 @@
 
      - TXE
 
+     - R/W1C
+
      - 发送数据寄存器空。
 
        0：发送数据寄存器非空，不允许写TXDATA寄存器。
@@ -1210,9 +1268,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1230,7 +1287,7 @@
 
      - R/W
 
-     - 0x0000_0001
+     - 0x00000001
 
      - 中断使能寄存器
 
@@ -1239,9 +1296,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1338,13 +1393,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1352,11 +1408,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 17
 
      - MLTO
+
+     - R/W
 
      - Master SCL LOW超时中断使能。
 
@@ -1369,6 +1429,8 @@
 
      - AL
 
+     - R/W
+
      - Master仲裁丢失总线中断使能。
 
        0：不使能。
@@ -1380,11 +1442,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 9
 
      - RXSTO
+
+     - R/W
 
      - Slave检测到STOP中断使能。
 
@@ -1397,6 +1463,8 @@
 
      - RXSTA
 
+     - R/W
+
      - Slave检测到START中断使能。
 
        0：不使能。
@@ -1408,11 +1476,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 4
 
      - RXDONE
+
+     - R/W
 
      - 接收数据结束中断使能。
 
@@ -1425,6 +1497,8 @@
 
      - TXDONE
 
+     - R/W
+
      - 发送数据结束中断使能。
 
        0：不使能。
@@ -1435,6 +1509,8 @@
    * - 2
 
      - RXOV
+
+     - R/W
 
      - 接收数据寄存器溢出中断使能。
 
@@ -1447,6 +1523,8 @@
 
      - RXNE
 
+     - R/W
+
      - 接收数据寄存器非空中断使能。
 
        0：不使能。
@@ -1457,6 +1535,8 @@
    * - 0
 
      - TXE
+
+     - R/W
 
      - 发送数据寄存器空中断使能。
 
@@ -1473,9 +1553,8 @@ Master控制寄存器MCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1493,7 +1572,7 @@ Master控制寄存器MCR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - Master控制寄存器
 
@@ -1502,9 +1581,7 @@ Master控制寄存器MCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1591,13 +1668,14 @@ Master控制寄存器MCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1605,17 +1683,23 @@ Master控制寄存器MCR
 
      - --
 
+     - RO
+
      - --
 
    * - 3
 
      - STO
 
+     - WAC
+
      - 写1，产生STOP，完成后自动清零。
 
    * - 2
 
      - WR
+
+     - WAC
 
      - 写1，发送TXDATA中数据，完成后（含ACK/NACK时间）自动清零。
 
@@ -1628,11 +1712,15 @@ Master控制寄存器MCR
 
      - RD
 
+     - WAC
+
      - 写1，接收数据到RXDATA中，完成后（含ACK/NACK时间）自动清零。
 
    * - 0
 
      - STA
+
+     - WAC
 
      - 写1，产生START，完成后自动清零。
 
@@ -1647,9 +1735,8 @@ Master控制寄存器MCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1667,7 +1754,7 @@ Master控制寄存器MCR
 
      - R/W
 
-     - 0x0003_4080
+     - 0x00033F7F
 
      - 时序配置寄存器
 
@@ -1676,9 +1763,7 @@ Master控制寄存器MCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1759,13 +1844,14 @@ Master控制寄存器MCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1773,11 +1859,15 @@ Master控制寄存器MCR
 
      - --
 
+     - RO
+
      - --
 
    * - 27:24
 
      - SDAH
+
+     - R/W
 
      - SDA数据保持时间配置。（对Master和Slave有效）
 
@@ -1791,6 +1881,8 @@ Master控制寄存器MCR
    * - 23:16
 
      - DIV
+
+     - R/W
 
      - 时钟预分频，详见SCLH和SCLL描述。（仅对Master模式有效）
 
@@ -1809,6 +1901,8 @@ Master控制寄存器MCR
 
      - SCLH
 
+     - R/W
+
      - SCL时钟高电平时间配置。（仅对Master模式有效）
 
        tHIGH=( (SCLH+1) * (DIV+1) + DNF + 6) * Tpclk
@@ -1817,6 +1911,8 @@ Master控制寄存器MCR
    * - 7:0
 
      - SCLL
+
+     - R/W
 
      - SCL时钟低电平时间配置。（对Master模式有效；在slave模式下，如果使能了STRETCH功能，且ASDS配置为0，则需要配置本寄存器。在slave写TXDATA后，延迟本寄存器设置的时间，再释放SCL。）
 
@@ -1829,15 +1925,17 @@ Master控制寄存器MCR
 
 
 
+.. note::
+   注：示意图如图 6-48所示
+
 .. ----------------------------------------------------------------------------------------------------
 
 Slave控制寄存器SCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1855,7 +1953,7 @@ Slave控制寄存器SCR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000008
 
      - Slave控制寄存器
 
@@ -1864,9 +1962,7 @@ Slave控制寄存器SCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1953,13 +2049,14 @@ Slave控制寄存器SCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1967,11 +2064,15 @@ Slave控制寄存器SCR
 
      - --
 
+     - RO
+
      - --
 
    * - 3
 
      - ASDS
+
+     - R/W
 
      - Stretching后数据建立时间自适应使能。（Adaptive Stretching Data Setup）
 
@@ -1985,6 +2086,8 @@ Slave控制寄存器SCR
    * - 2
 
      - STRE
+
+     - R/W
 
      - Clock stretching使能控制。
 
@@ -2001,6 +2104,8 @@ Slave控制寄存器SCR
 
      - MCDE
 
+     - R/W
+
      - Master Code Detect Enable.
 
        0：不检测master code。
@@ -2013,6 +2118,8 @@ Slave控制寄存器SCR
    * - 0
 
      - SADDR10
+
+     - R/W
 
      - slave地址模式控制。
 
@@ -2029,9 +2136,8 @@ Slave地址寄存器SADDR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2049,7 +2155,7 @@ Slave地址寄存器SADDR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - Slave地址寄存器
 
@@ -2058,9 +2164,7 @@ Slave地址寄存器SADDR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2145,13 +2249,14 @@ Slave地址寄存器SADDR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2159,11 +2264,15 @@ Slave地址寄存器SADDR
 
      - --
 
+     - RO
+
      - --
 
    * - 23:17
 
      - MASK7
+
+     - R/W
 
      - Slave对应地址位掩码。
 
@@ -2178,11 +2287,15 @@ Slave地址寄存器SADDR
 
      - MASK10
 
+     - R/W
+
      - Slave对应地址位掩码。
 
    * - 15:10
 
      - --
+
+     - RO
 
      - --
 
@@ -2190,17 +2303,23 @@ Slave地址寄存器SADDR
 
      - ADDR10
 
+     - R/W
+
      - 10位地址模式：地址bit9~bit8
 
    * - 7:1
 
      - ADDR7
 
+     - R/W
+
      - 地址bit7~bit1
 
    * - 0
 
      - ADDR0
+
+     - R/W
 
      - 10位地址模式：地址bit0
 

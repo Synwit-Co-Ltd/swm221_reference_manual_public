@@ -4,9 +4,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - UART数据寄存器
 
@@ -33,9 +32,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -120,13 +117,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -134,13 +132,17 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 10
 
      - PAERR
 
-     - 当前读回的的数据是否存在校验错误，RO
+     - RO
+
+     - 当前读回的的数据是否存在校验错误
 
        1：存在
 
@@ -151,7 +153,9 @@
 
      - VALID
 
-     - 数据有效位，RO
+     - RO
+
+     - 数据有效位
 
        1：DATA字段有有效的接收数据
 
@@ -161,6 +165,8 @@
    * - 8:0
 
      - DATA
+
+     - R/W
 
      - UART数据位
 
@@ -177,9 +183,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -197,7 +202,7 @@
 
      - R/W
 
-     - 1
+     - 0x00000001
 
      - UART控制及状态寄存器
 
@@ -206,9 +211,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -319,13 +322,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -333,11 +337,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 23:22
 
      - STOP2B
+
+     - R/W
 
      - 停止位模式
 
@@ -351,6 +359,8 @@
    * - 21:20
 
      - PARMD
+
+     - R/W
 
      - 奇偶校验位模式
 
@@ -367,6 +377,8 @@
 
      - PAREN
 
+     - R/W
+
      - 奇偶校验使能位
 
        1：使能
@@ -377,6 +389,8 @@
    * - 18
 
      - DATA9B
+
+     - R/W
 
      - 数据位模式
 
@@ -389,11 +403,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 14
 
      - TOIE
+
+     - R/W
 
      - 接收数据超时中断
 
@@ -406,11 +424,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 10
 
      - LOOP
+
+     - R/W
 
      - 回环测试模式使能位（从TX线发送出去的数据，在自身RX线上可以收到，从而测试硬件是否正常工作）
 
@@ -423,6 +445,8 @@
 
      - EN
 
+     - R/W
+
      - UART模块使能位
 
        1：使能
@@ -434,11 +458,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 6
 
      - TXDOIE
+
+     - R/W
 
      - 发送完成中断使能位
 
@@ -451,7 +479,9 @@
 
      - RXOV
 
-     - 接收端FIFO溢出标志位，W1C
+     - R/W1C
+
+     - 接收端FIFO溢出标志位
 
        1：接收FIFO溢出
 
@@ -461,6 +491,8 @@
    * - 4
 
      - RXIE
+
+     - R/W
 
      - 接收端FIFO中断使能位
 
@@ -475,7 +507,9 @@
 
      - RXNE
 
-     - 接收端FIFO非空标志位，RO
+     - RO
+
+     - 接收端FIFO非空标志位
 
        1：非空
 
@@ -485,6 +519,8 @@
    * - 2
 
      - TXIE
+
+     - R/W
 
      - 发送端FIFO中断使能位
 
@@ -499,7 +535,9 @@
 
      - TXFF
 
-     - 发送端FIFO满标志位，RO
+     - RO
+
+     - 发送端FIFO满标志位
 
        1：发送FIFO内的数据满
 
@@ -510,7 +548,9 @@
 
      - TXIDLE
 
-     - 发送线空闲标志位，RO
+     - RO
+
+     - 发送线空闲标志位
 
        1：发送线空闲
 
@@ -525,9 +565,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -545,7 +584,7 @@
 
      - R/W
 
-     - 0x184000
+     - 0xF0184000
 
      - UART波特率控制寄存器
 
@@ -554,9 +593,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -659,13 +696,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -673,11 +711,15 @@
 
      - FRAC
 
+     - R/W
+
      - 波特率设置微调（波特率分频值的小数部分）,参考BAUD的设置
 
    * - 27
 
      - TXDOIF
+
+     - RO
 
      - 发送完成中断状态位
 
@@ -692,7 +734,9 @@
 
      - ABRERR
 
-     - 自动调节波特率时，计数器溢出中断标志，R/W1C
+     - R/W1C
+
+     - 自动调节波特率时，计数器溢出中断标志
 
        1：自动调节波特率时，计数器溢出，调节失败。
 
@@ -702,6 +746,8 @@
    * - 25:24
 
      - ABRBIT
+
+     - R/W
 
      - 自动调节波特率时，检测的时间长度
 
@@ -718,16 +764,20 @@
 
      - ABREN
 
+     - R/WAC
+
      - 1：打开波特率自动调节功能。
 
        0：关闭波特率自动调节功能。
 
-       调节完成自动清零，R/W，AC
+       调节完成自动清零
 
 
    * - 22
 
      - RXIF
+
+     - RO
 
      - 1：接收数据缓存达到预定数量
 
@@ -739,6 +789,8 @@
    * - 21
 
      - TOIF
+
+     - RO
 
      - 1：接收数据超出TIME确定的时间
 
@@ -753,6 +805,8 @@
 
      - TXTHRF
 
+     - RO
+
      - 1：发送数据缓存达到预定数量
 
        0：发送数据缓存未达到预定数量
@@ -763,6 +817,8 @@
    * - 19
 
      - RXTHRF
+
+     - RO
 
      - 1：接收数据缓存达到预定数量
 
@@ -775,11 +831,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 17
 
      - TXIF
+
+     - RO
 
      - 1：发送数据缓存内的数据少于预定的数量
 
@@ -791,6 +851,8 @@
    * - 16
 
      - RXTOIF
+
+     - RO
 
      - 接收或超时中断标志
 
@@ -805,17 +867,23 @@
 
      - RXD
 
-     - 直接读取接收线状态，RO
+     - RO
+
+     - 直接读取接收线状态
 
    * - 14
 
      - TXD
 
-     - 直接读取发送线状态，RO
+     - RO
+
+     - 直接读取发送线状态
 
    * - 13:0
 
      - BAUD
+
+     - R/W
 
      - 用于控制UART工作的波特率
 
@@ -832,9 +900,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -852,7 +919,7 @@
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - UART数据队列寄存器
 
@@ -861,9 +928,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -950,13 +1015,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -964,11 +1030,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 27:24
 
      - TXTHR
+
+     - R/W
 
      - 设置发送FIFO中断（TXIF）阈值
 
@@ -981,11 +1051,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 19:16
 
      - RXTHR
+
+     - R/W
 
      - 设置接收FIFO中断（RXIF）阈值
 
@@ -998,11 +1072,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 11:8
 
      - TXLVL
+
+     - RO
 
      - 发送缓存的实际门限
 
@@ -1010,11 +1088,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 3:0
 
      - RXLVL
+
+     - RO
 
      - 接收缓存的实际门限
 
@@ -1026,9 +1108,8 @@ LIN Frame控制寄存器LINCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1046,7 +1127,7 @@ LIN Frame控制寄存器LINCR
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - LIN Frame控制寄存器
 
@@ -1055,9 +1136,7 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1146,13 +1225,14 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1160,11 +1240,15 @@ LIN Frame控制寄存器LINCR
 
      - --
 
+     - RO
+
      - --
 
    * - 4
 
      - GENBRK
+
+     - R/WAC
 
      - 发送LIN Break
 
@@ -1172,14 +1256,16 @@ LIN Frame控制寄存器LINCR
 
        0：不发送
 
-       发送完成自动清零，R/W，AC
+       发送完成自动清零
 
 
    * - 3
 
      - GENBRKIF
 
-     - LIN Break发送完成中断状态，R/W1C
+     - R/W1C
+
+     - LIN Break发送完成中断状态
 
        1：中断已产生
 
@@ -1191,6 +1277,8 @@ LIN Frame控制寄存器LINCR
    * - 2
 
      - GENBRKIE
+
+     - R/W
 
      - 发送LIN Break完成中断的使能
 
@@ -1205,7 +1293,9 @@ LIN Frame控制寄存器LINCR
 
      - BRKDETIF
 
-     - 检测到LIN Break中断状态，R/W1C
+     - R/W1C
+
+     - 检测到LIN Break中断状态
 
        1：中断已产生
 
@@ -1215,6 +1305,8 @@ LIN Frame控制寄存器LINCR
    * - 0
 
      - BRKDETIE
+
+     - R/W
 
      - 检测到LIN Break中断的使能
 
@@ -1231,9 +1323,8 @@ LIN Frame控制寄存器LINCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1251,7 +1342,7 @@ LIN Frame控制寄存器LINCR
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - 自动流控控制寄存器
 
@@ -1260,9 +1351,7 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1353,13 +1442,14 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1367,23 +1457,31 @@ LIN Frame控制寄存器LINCR
 
      - --
 
+     - RO
+
      - --
 
    * - 8
 
      - RTSCR_STAT
 
-     - RTS的当前状态，RO
+     - RO
+
+     - RTS的当前状态
 
    * - 7
 
      - CTSCR_STAT
 
-     - CTS的当前状态，RO
+     - RO
+
+     - CTS的当前状态
 
    * - 6:4
 
      - RTSCR_THR
+
+     - R/W
 
      - RTS流控的触发阈值
 
@@ -1400,6 +1498,8 @@ LIN Frame控制寄存器LINCR
 
      - RTSCR_POL
 
+     - R/W
+
      - RTS信号的极性。
 
        1：高有效，RTS输出高，可以接收数据。
@@ -1410,6 +1510,8 @@ LIN Frame控制寄存器LINCR
    * - 2
 
      - CTSCR_POL
+
+     - R/W
 
      - CTS信号的极性。
 
@@ -1422,6 +1524,8 @@ LIN Frame控制寄存器LINCR
 
      - RTSCR_EN
 
+     - R/W
+
      - RTS流控使能
 
        1：RTS信号发挥流控的作用
@@ -1432,6 +1536,8 @@ LIN Frame控制寄存器LINCR
    * - 0
 
      - CTSCR_EN
+
+     - R/W
 
      - CTS流控使能
 
@@ -1448,9 +1554,8 @@ LIN Frame控制寄存器LINCR
 ^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1468,7 +1573,7 @@ LIN Frame控制寄存器LINCR
 
      - R/W
 
-     - 0
+     - 0x00000334
 
      - CFG 寄存器
 
@@ -1477,9 +1582,7 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1570,13 +1673,14 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1584,11 +1688,15 @@ LIN Frame控制寄存器LINCR
 
      - --
 
+     - RO
+
      - --
 
    * - 11
 
      - TXINV
+
+     - R/W
 
      - 1：发送时电平取反
 
@@ -1599,6 +1707,8 @@ LIN Frame控制寄存器LINCR
 
      - RXINV
 
+     - R/W
+
      - 1：接收时电平取反
 
        0：接收时电平不取反
@@ -1607,6 +1717,8 @@ LIN Frame控制寄存器LINCR
    * - 9:6
 
      - BRKRXLEN
+
+     - R/W
 
      - 接收BRK的判定长度。
 
@@ -1617,6 +1729,8 @@ LIN Frame控制寄存器LINCR
 
      - BRKTXLEN
 
+     - R/W
+
      - 发送BRK的长度。
 
        1表示发送1bit的0，2表示发送2bit的0，依次类推
@@ -1626,6 +1740,8 @@ LIN Frame控制寄存器LINCR
 
      - MSBF
 
+     - R/W
+
      - 1：发送和接收时MSB在前
 
        0：发送和接收时LSB在前
@@ -1634,6 +1750,8 @@ LIN Frame控制寄存器LINCR
    * - 0
 
      - RXEN
+
+     - R/W
 
      - 接收打开使能
 
@@ -1650,9 +1768,8 @@ LIN Frame控制寄存器LINCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1670,7 +1787,7 @@ LIN Frame控制寄存器LINCR
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - 接收超时控制寄存器
 
@@ -1679,9 +1796,7 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1766,13 +1881,14 @@ LIN Frame控制寄存器LINCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1780,17 +1896,23 @@ LIN Frame控制寄存器LINCR
 
      - --
 
+     - RO
+
      - --
 
    * - 13
 
      - IFCLR
 
-     - 超时计数器清零，R/W1C
+     - R/W1C
+
+     - 超时计数器清零
 
    * - 12
 
      - MODE
+
+     - R/W
 
      - 1：无论FIFO是否清空，间隔指定时间后均产生超时中断
 
@@ -1800,6 +1922,8 @@ LIN Frame控制寄存器LINCR
    * - 11:0
 
      - TIME
+
+     - R/W
 
      - 接收数据超时中断的触发条件。
 

@@ -2,8 +2,7 @@
 
 .. flat-table::
    :header-rows: 1
-   :class: tight-table
-   :widths: 12 9 6 10 33
+   :class: tight-table-reg-map
 
    * - 名称
 
@@ -38,7 +37,7 @@
 
      - W
 
-     - 0
+     - 0x00000000
 
      - eFlash 写入地址
 
@@ -48,7 +47,7 @@
 
      - RW
 
-     - 0x0
+     - 0x00000000
 
      - 擦除操作请求
 
@@ -58,9 +57,59 @@
 
      - RW
 
-     - 0x0
+     - 0x00000000
 
      - Cache 配置寄存器
+
+   * - CFG0
+
+     - 0x10
+
+     - RW
+
+     - 0x00000000
+
+     - Flash 配置寄存器0
+
+   * - CFG1
+
+     - 0x14
+
+     - WO
+
+     - 0x00000000
+
+     - Flash 配置寄存器1
+
+   * - CFG2
+
+     - 0x18
+
+     - RW
+
+     - 0x00000053
+
+     - Flash 配置寄存器2
+
+   * - CFG3
+
+     - 0x1c
+
+     - RW
+
+     - 0x09C488B8
+
+     - Flash 配置寄存器3
+
+   * - CFG4
+
+     - 0x20
+
+     - RW
+
+     - 0x2AF8EA60
+
+     - Flash 配置寄存器4
 
    * - STAT
 
@@ -68,7 +117,7 @@
 
      - RO
 
-     - 0xA8
+     - 0x000000A8
 
      - Flash 状态寄存器
 
@@ -78,7 +127,7 @@
 
      - RW
 
-     - 0x0
+     - 0x00000000
 
      - Remap寄存器
 

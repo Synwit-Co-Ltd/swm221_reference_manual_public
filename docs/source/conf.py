@@ -17,7 +17,7 @@ release = '1.0'
 # tight-table
 # https://knowyourtoolset.com/2018/02/controlling-the-width-of-a-table-with-read-the-docs/
 def setup(app):
-   app.add_css_file('css/custom.css')
+    app.add_css_file('css/custom.css')
    
 extensions = ['sphinx.ext.autodoc',
     #'sphinx_markdown_tables',
@@ -43,7 +43,8 @@ html_theme = 'sphinx_rtd_theme'
 
 html_show_sourcelink = True
 html_static_path = ['_static']
-html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
+# html_css_files = ['css/custom.css', 'css/theme.css', 'css/theme_overrides.css']
+html_css_files = ['css/custom.css']
 
 # html_logo = '_static/logo.ico'
 

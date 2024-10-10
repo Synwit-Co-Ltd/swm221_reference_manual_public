@@ -55,7 +55,9 @@ SWM221系列芯片工作电压要求介于2V到3.6V之间。系统电源架构�
 
 VDDIO提供IO电源。电源地VSS和VSSIO芯片内部短接。
 
-模拟电路电源通过VDD引脚输入，提供电源给PLL, HRC, LRC, ADC, DAC, PGA, CMP, POR, LVR, 以及PVD，并且通过芯片内嵌线性稳压器（LDO）来为内部数字电源提供1.5V电源。
+模拟电路电源通过VDDA引脚输入，提供电源给PLL, HRC, LRC, ADC, DAC, PGA, CMP, POR, LVR, 以及PVD，并且通过芯片内嵌线性稳压器（LDO）来为内部数字电源提供1.5V电源。
+
+在芯片只有VDD引脚情况下，则VDDIO和VDDA内部短接。
 
 .. important::
    CAP脚位为LDO输出，需要对地接电容，使用高质量电容能提升系统稳定性，有效降低电源干扰。

@@ -76,7 +76,7 @@ for block in iter_block_items(doc):
       fid.write('^'*int(2.5*len(section_name)) + '\n\n')  
 
     fid.write(f'.. flat-table::\n')
-    fid.write(f'   :class: tight-table\n')
+    # fid.write(f'   :class: tight-table\n')
 
     # ungly kludge to make alignment works, should be done in post-processing
     first_row = table.rows[0]
@@ -86,17 +86,21 @@ for block in iter_block_items(doc):
 
     if num_cells == 5:
       # 5 cells --> type 0
+      fid.write(f'   :class: tight-table-reg-info\n')
       fid.write(f'   :header-rows: 1\n') 
-      fid.write(f'   :widths: 12 9 6 10 33\n')
+      # fid.write(f'   :widths: 12 9 6 10 33\n')
       # fid.write(f'   :align: center\n')
     elif num_cells == 8:       
       # 8 cells --> type 1
-      fid.write(f'   :widths: 9 9 9 9 9 9 9 9\n')
-      fid.write(f'   :align: center\n')
-    elif num_cells == 3:
+      fid.write(f'   :class: tight-table-reg-fields\n')
+      # fid.write(f'   :widths: 9 9 9 9 9 9 9 9\n')
+      # fid.write(f'   :align: center\n')
+    #elif num_cells == 4:
+    else:
       # 3 cells --> type 2
+      fid.write(f'   :class: tight-table-reg-desc\n')
       fid.write(f'   :header-rows: 1\n')
-      fid.write(f'   :widths: 12 15 73\n') 
+      # fid.write(f'   :widths: 12 15 73\n') 
        
     fid.write(f'\n')
 

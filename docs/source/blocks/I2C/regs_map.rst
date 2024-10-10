@@ -2,8 +2,7 @@
 
 .. flat-table::
    :header-rows: 1
-   :class: tight-table
-   :widths: 12 9 6 10 33
+   :class: tight-table-reg-map
 
    * - 名称
 

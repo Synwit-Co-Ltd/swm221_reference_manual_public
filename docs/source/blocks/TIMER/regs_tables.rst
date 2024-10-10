@@ -4,9 +4,8 @@ LOAD寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@ LOAD寄存器
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - Timer计数初始值
 
@@ -33,9 +32,7 @@ LOAD寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -114,13 +111,14 @@ LOAD寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -128,11 +126,15 @@ LOAD寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 23:0
 
      - DATA
+
+     - R/W
 
      - CNTUx的初始值
 
@@ -144,9 +146,8 @@ VALUE寄存器
 ^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -164,7 +165,7 @@ VALUE寄存器
 
      - RO
 
-     - 0
+     - 0x00FFFFFF
 
      - Timer计数器当前值
 
@@ -173,9 +174,7 @@ VALUE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -211,7 +210,7 @@ VALUE寄存器
 
      - 16
 
-   * - :cspan:`7` CNT
+   * - :cspan:`7` CNTU
 
    * - 15
 
@@ -229,7 +228,7 @@ VALUE寄存器
 
      - 8
 
-   * - :cspan:`7` CNT
+   * - :cspan:`7` CNTU
 
    * - 7
 
@@ -247,20 +246,21 @@ VALUE寄存器
 
      - 0
 
-   * - :cspan:`7` CNT
+   * - :cspan:`7` CNTD
 
 
 
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -268,13 +268,25 @@ VALUE寄存器
 
      - --
 
-     - --
+     - RO
 
-   * - 23:0
+     - 保留位
 
-     - CNT
+   * - 23:8
+
+     - CNTU
+
+     - RO
 
      - 计数器的当前值
+
+   * - 7:0
+
+     - CNTD
+
+     - RO
+
+     - 计数器的当前值。CNTD每次记到0时，CNTU才翻转一次
 
 
 
@@ -284,9 +296,8 @@ VALUE寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -304,7 +315,7 @@ VALUE寄存器
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - 定时器控制寄存器
 
@@ -313,9 +324,7 @@ VALUE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -400,13 +409,14 @@ VALUE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -414,11 +424,15 @@ VALUE寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 5:4
 
      - EDGESEL
+
+     - R/W
 
      - 输入脉冲测量模式下，选择启动计数的沿。
 
@@ -433,6 +447,8 @@ VALUE寄存器
 
      - MODE
 
+     - R/W
+
      - 定时器工作模式。
 
        00：普通定时器模式
@@ -445,6 +461,8 @@ VALUE寄存器
    * - 1:0
 
      - SRCSEL
+
+     - R/W
 
      - 定时器计数触发选择
 
@@ -459,9 +477,8 @@ IE寄存器
 ^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -479,7 +496,7 @@ IE寄存器
 
      - R/W
 
-     - 0x00
+     - 0x00000000
 
      - 定时器中断控制寄存器
 
@@ -488,9 +505,7 @@ IE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -579,13 +594,14 @@ IE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -593,11 +609,15 @@ IE寄存器
 
      - --
 
-     - 
+     - RO
+
+     - 保留位
 
    * - 4
 
      - PIFINTMSK
+
+     - R/W
 
      - 输入脉冲下降沿中断屏蔽（当PINO>x时，配置此位才生效）
 
@@ -610,6 +630,8 @@ IE寄存器
 
      - PIRINTMSK
 
+     - R/W
+
      - 输入脉冲上升沿中断屏蔽（当PINO>x时，配置此位才生效）
 
        0：屏蔽
@@ -621,11 +643,15 @@ IE寄存器
 
      - -
 
-     - 
+     - RO
+
+     - 保留位
 
    * - 1
 
      - POT0INTMSK
+
+     - R/W
 
      - 输出PWM翻转点0中断屏蔽（当PONO>x时，配置此位才生效）
 
@@ -637,6 +663,8 @@ IE寄存器
    * - 0
 
      - TOINTMSK
+
+     - R/W
 
      - 计数器溢出中断屏蔽
 
@@ -653,9 +681,8 @@ IF寄存器
 ^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -673,7 +700,7 @@ IF寄存器
 
      - R/W1C
 
-     - 0
+     - 0x00000000
 
      - 中断状态寄存器
 
@@ -682,9 +709,7 @@ IF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -773,13 +798,14 @@ IF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -787,11 +813,15 @@ IF寄存器
 
      - --
 
-     - 
+     - RO
+
+     - 保留位
 
    * - 4
 
      - PIFINTST
+
+     - R,W1C
 
      - 输入脉冲下降沿中断状态（当PINO>x时，配置此位才生效）
 
@@ -804,6 +834,8 @@ IF寄存器
 
      - PIRINTST
 
+     - R,W1C
+
      - 输入脉冲上升沿中断状态（当PINO>x时，配置此位才生效）
 
        1：中断发生
@@ -815,11 +847,15 @@ IF寄存器
 
      - -
 
+     - RO
+
      - 
 
    * - 1
 
      - POT0INTST
+
+     - R,W1C
 
      - 输出PWM翻转点0中断状态（当PONO>x时，配置此位才生效）
 
@@ -831,6 +867,8 @@ IF寄存器
    * - 0
 
      - TOINTST
+
+     - R,W1C
 
      - 计数器溢出中断状态
 
@@ -847,9 +885,8 @@ HALT寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -867,7 +904,7 @@ HALT寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - 定时器暂停控制寄存器
 
@@ -876,9 +913,7 @@ HALT寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -959,13 +994,14 @@ HALT寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -973,11 +1009,15 @@ HALT寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 0
 
      - halt
+
+     - R/W
 
      - 定时器暂停控制
 
@@ -994,9 +1034,8 @@ OCCR寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1014,7 +1053,7 @@ OCCR寄存器
 
      - R/W
 
-     - 0
+     - 0x00000000
 
      - 输出PWM的控制寄存器
 
@@ -1023,9 +1062,7 @@ OCCR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1110,13 +1147,14 @@ OCCR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1124,11 +1162,15 @@ OCCR寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 2
 
      - POMSK
+
+     - R/W
 
      - PWM输出屏蔽位。将PWM的输出屏蔽到POMSKVALx指定的值。当PONO>x时才有效。
 
@@ -1136,11 +1178,15 @@ OCCR寄存器
 
      - POINITVAL
 
+     - R/W
+
      - PWM输出的起始值。当PONO>x时才有效。
 
    * - 0
 
      - POMSKVAL
+
+     - R/W
 
      - PWM输出屏蔽值。当PONO>x时才有效。
 
@@ -1152,9 +1198,8 @@ OCMAT控制寄存器
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1172,7 +1217,7 @@ OCMAT控制寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - PWM输出高电平控制寄存器
 
@@ -1181,9 +1226,7 @@ OCMAT控制寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1262,13 +1305,14 @@ OCMAT控制寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1276,11 +1320,15 @@ OCMAT控制寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 23:0
 
      - POTVAL
+
+     - R/W
 
      - PWM输出高电平宽度。当POTVAL==0时，占空比为0；当POTVAL>CNTU时，占空比为100%。
 
@@ -1292,9 +1340,8 @@ ICLOW寄存器
 ^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1312,7 +1359,7 @@ ICLOW寄存器
 
      - RO
 
-     - 0x0
+     - 0x00000000
 
      - 输入脉冲的低电平长度
 
@@ -1321,9 +1368,7 @@ ICLOW寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1402,13 +1447,14 @@ ICLOW寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1416,11 +1462,15 @@ ICLOW寄存器
 
      - --
 
-     - --
+     - RO
+
+     - 保留位
 
    * - 23:0
 
      - PLOW
+
+     - R/W
 
      - 输入脉冲的低电平长度。当PINO>x时才有效，否则为常0。当输入脉冲的上升沿来到时，自动更新。
 
@@ -1432,9 +1482,8 @@ ICHIGH寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1452,7 +1501,7 @@ ICHIGH寄存器
 
      - RO
 
-     - 0x0
+     - 0x00000000
 
      - 输入脉冲的高电平长度
 
@@ -1461,9 +1510,7 @@ ICHIGH寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1542,13 +1589,14 @@ ICHIGH寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1556,11 +1604,15 @@ ICHIGH寄存器
 
      - --
 
+     - RO
+
      - --
 
    * - 23:0
 
      - PHIGH
+
+     - RO
 
      - 输入脉冲的高电平长度。当PINO>x时才有效，否则为常0。当输入脉冲的下降沿来到时，自动更新。
 
@@ -1572,9 +1624,8 @@ PREDIV寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1592,7 +1643,7 @@ PREDIV寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - 计数器 CNTDx计数初始值
 
@@ -1601,9 +1652,7 @@ PREDIV寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1682,13 +1731,14 @@ PREDIV寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1696,11 +1746,15 @@ PREDIV寄存器
 
      - --
 
+     - RO
+
      - --
 
    * - 23:0
 
      - LDVALD
+
+     - R/W
 
      - 计数器 CNTDx计数初始值,也是定时器x计数低八位的初值
 
@@ -1712,9 +1766,8 @@ HALLIE寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1732,7 +1785,7 @@ HALLIE寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - HALL中断使能
 
@@ -1741,9 +1794,7 @@ HALLIE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1824,13 +1875,14 @@ HALLIE寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1838,11 +1890,15 @@ HALLIE寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 1:0
 
      - HALLIE
+
+     - R/W
 
      - HALL中断使能。仅当定义HALL时有效，否则为只读，且为常0。
 
@@ -1859,9 +1915,8 @@ HALLIF寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -1879,7 +1934,7 @@ HALLIF寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - HALL中断状态
 
@@ -1888,9 +1943,7 @@ HALLIF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -1975,13 +2028,14 @@ HALLIF寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -1989,11 +2043,15 @@ HALLIF寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 2
 
      - HALLINTST2
+
+     - R/W
 
      - 输入HALL信号2触发中断的状态
 
@@ -2001,11 +2059,15 @@ HALLIF寄存器
 
      - HALLINTST1
 
+     - R/W
+
      - 输入HALL信号1触发中断的状态
 
    * - 0
 
      - HALLINTST0
+
+     - R/W
 
      - 输入HALL信号0触发中断的状态
 
@@ -2017,9 +2079,8 @@ HALLEN寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2037,7 +2098,7 @@ HALLEN寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - HALL功能开关
 
@@ -2046,9 +2107,7 @@ HALLEN寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2129,13 +2188,14 @@ HALLEN寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2143,11 +2203,15 @@ HALLEN寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 1:0
 
      - HALLEN
+
+     - R/W
 
      - 输入HALL信号触发使能
 
@@ -2164,9 +2228,8 @@ HALLDR寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2184,7 +2247,7 @@ HALLDR寄存器
 
      - RO
 
-     - 0x0
+     - 0x00000000
 
      - 通道0计数器的计数值
 
@@ -2193,9 +2256,7 @@ HALLDR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2274,13 +2335,14 @@ HALLDR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2288,11 +2350,15 @@ HALLDR寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 23:0
 
      - HALLDR
+
+     - R/W
 
      - HALL组1触发时，通道0计数器的计数值。仅当定义HALL时有效，否则为只读，且为常0。
 
@@ -2307,9 +2373,8 @@ HALLSR寄存器
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2327,7 +2392,7 @@ HALLSR寄存器
 
      - RO
 
-     - 0x0
+     - 0x00000000
 
      - 通道0计数器的计数值
 
@@ -2336,9 +2401,7 @@ HALLSR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2423,13 +2486,14 @@ HALLSR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2437,11 +2501,15 @@ HALLSR寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 2
 
      - HALLSR2
+
+     - R/W
 
      - 输入HALL信号2的状态
 
@@ -2449,11 +2517,15 @@ HALLSR寄存器
 
      - HALLSR1
 
+     - R/W
+
      - 输入HALL信号1的状态
 
    * - 0
 
      - HALLSR0
+
+     - R/W
 
      - 输入HALL信号0的状态
 
@@ -2465,9 +2537,8 @@ ICSR寄存器
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2485,7 +2556,7 @@ ICSR寄存器
 
      - RO
 
-     - 0x0
+     - 0x00000000
 
      - 输入capture信号的状态
 
@@ -2494,9 +2565,7 @@ ICSR寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2570,24 +2639,25 @@ ICSR寄存器
 
    * - :cspan:`4` --
 
-     - IC_TIMR2
+     - IC_TIMER2
 
-     - IC_TIMR1
+     - IC_TIMER1
 
-     - IC_TIMR0
+     - IC_TIMER0
 
 
 
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2595,23 +2665,31 @@ ICSR寄存器
 
      - --
 
+     - RO
+
      - 
 
    * - 2
 
-     - IC_TIMR2
+     - IC_TIMER2
+
+     - RO
 
      - Timer2输入捕获信号状态
 
    * - 1
 
-     - IC_TIMR1
+     - IC_TIMER1
+
+     - RO
 
      - Timer1输入捕获信号状态
 
    * - 0
 
-     - IC_TIMR0
+     - IC_TIMER0
+
+     - RO
 
      - Timer0输入捕获信号状态
 
@@ -2623,9 +2701,8 @@ EN寄存器
 ^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -2643,7 +2720,7 @@ EN寄存器
 
      - R/W
 
-     - 0x0
+     - 0x00000000
 
      - 定时器使能
 
@@ -2652,9 +2729,7 @@ EN寄存器
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -2728,24 +2803,25 @@ EN寄存器
 
    * - :cspan:`4` --
 
-     - EN_TIMR2
+     - TIMER2_EN
 
-     - EN_TIMR1
+     - TIMER1_EN
 
-     - EN_TIMR0
+     - TIMER0_EN
 
 
 
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -2753,23 +2829,31 @@ EN寄存器
 
      - --
 
+     - RO
+
      - RESERVED
 
    * - 2
 
-     - EN_TIMR2
+     - TIMER2_EN
+
+     - R/W
 
      - 定时器timer2使能。
 
    * - 1
 
-     - EN_TIMR1
+     - TIMER1_EN
+
+     - R/W
 
      - 定时器timer1使能。
 
    * - 0
 
-     - EN_TIMR0
+     - TIMER0_EN
+
+     - R/W
 
      - 定时器timer0使能。
 

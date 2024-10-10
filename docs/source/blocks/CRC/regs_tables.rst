@@ -4,9 +4,8 @@
 ^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -33,9 +32,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -128,13 +125,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -142,11 +140,15 @@
 
      - --
 
+     - R/W
+
      - --
 
    * - 10:9
 
      - IBIT
+
+     - R/W
 
      - CRC输入数据有效位数寄存器
 
@@ -163,19 +165,24 @@
 
      - POLY
 
+     - R/W
+
      - CRC算法选择寄存器
 
-       00: x\ :sup:`16` + x\ :sup:`12` + x\ :sup:`5` + 1
+       00：x^16+x^12+x^5+1
 
-       01: x\ :sup:`8` + x\ :sup:`2` + x + 1
+       01：x^8+x^2+x+1
 
-       10: x\ :sup:`16` + x\ :sup:`15` + x\ :sup:`2` + 1
+       10：x^16+x^15+x^2+1
 
-       11: x\ :sup:`32` + x\ :sup:`26` + x\ :sup:`23` + x\ :sup:`22` + x\ :sup:`16` + x\ :sup:`12` + x\ :sup:`11` + x\ :sup:`10` + x\ :sup:`8` + x\ :sup:`7` + x\ :sup:`5` + x\ :sup:`4` + x\ :sup:`2` + x + 1
+       11：x^32+x^26+x^23+x^22+x^16+x^12+x^11+x^10+x^8+x^7+x^5+x^4+x^2+x+1
+
 
    * - 6
 
      - ONOT
+
+     - R/W
 
      - 输出结果是否取反寄存器
 
@@ -187,6 +194,8 @@
    * - 5:4
 
      - OREV
+
+     - R/W
 
      - 输出结果是否翻转寄存器
 
@@ -203,6 +212,8 @@
 
      - INOT
 
+     - R/W
+
      - 输入数据是否取反
 
        1：输入数据取反
@@ -213,6 +224,8 @@
    * - 2:1
 
      - IREV
+
+     - R/W
 
      - 输入数据是否翻转。
 
@@ -229,6 +242,8 @@
 
      - EN
 
+     - R/W
+
      - CRC使能控制位
 
        1：CRC使能
@@ -244,9 +259,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -273,9 +287,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -354,9 +366,8 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
@@ -378,9 +389,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -407,9 +417,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -488,19 +496,22 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31:0
 
      - INIVAL
+
+     - R/W
 
      - CRC初始值寄存器
 
@@ -512,9 +523,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -541,9 +551,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -622,19 +630,22 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
    * - 31:0
 
      - RESULT
+
+     - R/W
 
      - CRC结果输出寄存器，有效位根据CR寄存器POLY位选择
 

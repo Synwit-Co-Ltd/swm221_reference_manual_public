@@ -4,9 +4,8 @@ PGA0控制寄存器PGA0CR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@ PGA0控制寄存器PGA0CR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - PGA0控制寄存器
 
@@ -33,9 +32,7 @@ PGA0控制寄存器PGA0CR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -124,13 +121,14 @@ PGA0控制寄存器PGA0CR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -138,11 +136,15 @@ PGA0控制寄存器PGA0CR
 
      - --
 
+     - RO
+
      - --
 
    * - 7
 
      - BYPASS
+
+     - R/W
 
      - 输出BUF旁路寄存器
 
@@ -155,6 +157,8 @@ PGA0控制寄存器PGA0CR
 
      - EN
 
+     - R/W
+
      - 输出BUF旁路使能寄存器
 
        0：关闭
@@ -165,6 +169,8 @@ PGA0控制寄存器PGA0CR
    * - 5:4
 
      - GAIN
+
+     - R/W
 
      - PGA模式增益选择寄存器
 
@@ -181,6 +187,8 @@ PGA0控制寄存器PGA0CR
 
      - ROUT
 
+     - R/W
+
      - 输出电阻选择寄存器
 
        00：open
@@ -196,6 +204,8 @@ PGA0控制寄存器PGA0CR
 
      - MODE
 
+     - R/W
+
      - PGA模式选择寄存器
 
        0：OPA
@@ -206,6 +216,8 @@ PGA0控制寄存器PGA0CR
    * - 0
 
      - EN
+
+     - R/W
 
      - OPA使能寄存器
 
@@ -222,9 +234,8 @@ PAG2控制寄存器PGA2CR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -242,7 +253,7 @@ PAG2控制寄存器PGA2CR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - PGA2控制寄存器
 
@@ -251,9 +262,7 @@ PAG2控制寄存器PGA2CR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -342,13 +351,14 @@ PAG2控制寄存器PGA2CR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -356,11 +366,15 @@ PAG2控制寄存器PGA2CR
 
      - --
 
+     - RO
+
      - --
 
    * - 7
 
      - BYPASS
+
+     - R/W
 
      - 输出BUF旁路寄存器
 
@@ -373,6 +387,8 @@ PAG2控制寄存器PGA2CR
 
      - EN
 
+     - R/W
+
      - 输出BUF旁路使能寄存器
 
        0：关闭
@@ -383,6 +399,8 @@ PAG2控制寄存器PGA2CR
    * - 5:4
 
      - GAIN
+
+     - R/W
 
      - PGA模式增益选择寄存器
 
@@ -399,6 +417,8 @@ PAG2控制寄存器PGA2CR
 
      - ROUT
 
+     - R/W
+
      - 输出电阻选择寄存器
 
        00：open
@@ -414,6 +434,8 @@ PAG2控制寄存器PGA2CR
 
      - MODE
 
+     - R/W
+
      - PGA模式选择寄存器
 
        0：OPA
@@ -424,6 +446,8 @@ PAG2控制寄存器PGA2CR
    * - 0
 
      - EN
+
+     - R/W
 
      - OPA使能寄存器
 
@@ -440,9 +464,8 @@ PGA参考电压寄存器PGAREF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -460,7 +483,7 @@ PGA参考电压寄存器PGAREF
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - PGA参考电压寄存器
 
@@ -469,9 +492,7 @@ PGA参考电压寄存器PGAREF
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -552,13 +573,14 @@ PGA参考电压寄存器PGAREF
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -566,11 +588,15 @@ PGA参考电压寄存器PGAREF
 
      - --
 
+     - RO
+
      - --
 
    * - 1:0
 
      - REFSEL
+
+     - R/W
 
      - PGA参考电压选择寄存器
 

@@ -4,9 +4,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -24,7 +23,7 @@
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - CMP0控制寄存器
 
@@ -33,9 +32,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -126,13 +123,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -140,11 +138,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 17
 
      - TOPWM
+
+     - R/W
 
      - PWM刹车输入使能寄存器
 
@@ -157,6 +159,8 @@
 
      - IE
 
+     - R/W
+
      - CMP0中断使能寄存器
 
        0：关闭
@@ -168,17 +172,23 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 8
 
      - VPXEN
 
+     - R/W
+
      - CMP0_VP0/CMP0_VP1/CMP0_VP2星形连接，中心点VPX
 
    * - 7:5
 
      - VPSEL
+
+     - R/W
 
      - CMP0正端电压选择信号寄存器
 
@@ -197,6 +207,8 @@
 
      - VNSEL
 
+     - R/W
+
      - CMP0负端电压选择信号
 
        00：CMP0_VN
@@ -209,6 +221,8 @@
    * - 2:1
 
      - HYST
+
+     - R/W
 
      - CMP0迟滞电压选择信号
 
@@ -225,6 +239,8 @@
 
      - EN
 
+     - R/W
+
      - CMP0使能寄存器
 
        0：关闭CMP
@@ -240,9 +256,8 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -260,7 +275,7 @@
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - CMP0控制寄存器
 
@@ -269,9 +284,7 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -360,13 +373,14 @@
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -374,11 +388,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 17
 
      - TOPWM
+
+     - R/W
 
      - PWM刹车输入使能寄存器
 
@@ -391,6 +409,8 @@
 
      - IE
 
+     - R/W
+
      - CMP1中断使能寄存器
 
        0：关闭
@@ -402,11 +422,15 @@
 
      - --
 
+     - RO
+
      - --
 
    * - 7:5
 
      - VPSEL
+
+     - R/W
 
      - CMP1正端电压选择信号
 
@@ -425,6 +449,8 @@
 
      - VNSEL
 
+     - R/W
+
      - CMP1负端电压选择信号
 
        00：CMP1_VN
@@ -435,6 +461,8 @@
    * - 2:1
 
      - HYST
+
+     - R/W
 
      - CMP1迟滞电压选择信号
 
@@ -451,6 +479,8 @@
 
      - EN
 
+     - R/W
+
      - CMP1使能寄存器
 
        0：关闭CMP
@@ -466,9 +496,8 @@ ACMP控制寄存器ACMPCR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -486,7 +515,7 @@ ACMP控制寄存器ACMPCR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - CMP控制寄存器
 
@@ -495,9 +524,7 @@ ACMP控制寄存器ACMPCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -580,13 +607,14 @@ ACMP控制寄存器ACMPCR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -594,11 +622,15 @@ ACMP控制寄存器ACMPCR
 
      - --
 
+     - RO
+
      - --
 
    * - 15:8
 
      - DACDR
+
+     - R/W
 
      - DAC数据寄存器
 
@@ -619,11 +651,15 @@ ACMP控制寄存器ACMPCR
 
      - --
 
+     - RO
+
      - --
 
    * - 2:1
 
      - DACVR
+
+     - R/W
 
      - CMPDAC参考电压选择信号
 
@@ -637,6 +673,8 @@ ACMP控制寄存器ACMPCR
    * - 0
 
      - DACEN
+
+     - R/W
 
      - DAC使能寄存器
 
@@ -653,9 +691,8 @@ ACMP状态寄存器ACMPSR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-info
    :header-rows: 1
-   :widths: 12 9 6 10 33
 
    * - 寄存器
 
@@ -673,7 +710,7 @@ ACMP状态寄存器ACMPSR
 
      - R/W
 
-     - 0x0000_0000
+     - 0x00000000
 
      - CMP状态寄存器
 
@@ -682,9 +719,7 @@ ACMP状态寄存器ACMPSR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
-   :widths: 9 9 9 9 9 9 9 9
-   :align: center
+   :class: tight-table-reg-fields
 
    * - 31
 
@@ -771,13 +806,14 @@ ACMP状态寄存器ACMPSR
 .. ----------------------------------------------------------------------------------------------------
 
 .. flat-table::
-   :class: tight-table
+   :class: tight-table-reg-desc
    :header-rows: 1
-   :widths: 12 15 73
 
    * - 位域
 
      - 名称
+
+     - 类型
 
      - 描述
 
@@ -785,11 +821,15 @@ ACMP状态寄存器ACMPSR
 
      - --
 
+     - RO
+
      - --
 
    * - 9
 
      - CMP1OUT
+
+     - RO
 
      - CMP1原始状态输出寄存器
 
@@ -797,11 +837,15 @@ ACMP状态寄存器ACMPSR
 
      - CMP0OUT
 
+     - RO
+
      - CMP0原始状态输出寄存器
 
    * - 7:2
 
      - --
+
+     - RO
 
      - --
 
@@ -809,11 +853,15 @@ ACMP状态寄存器ACMPSR
 
      - CMP1IF
 
+     - W1C
+
      - CMP1中断标志寄存器
 
    * - 0
 
      - CMP0IF
+
+     - W1C
 
      - CMP0中断标志寄存器
 

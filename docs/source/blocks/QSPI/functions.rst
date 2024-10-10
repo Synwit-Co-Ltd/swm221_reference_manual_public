@@ -181,5 +181,7 @@ MASK[n] = 0，则屏蔽结果的位n，从而不考虑该位。如果MASK[n] = 1
 QSPI延迟数据采样
 ^^^^^^^^^^^^^^^^
 
-默认情况下，QSPI在FLASH驱动信号后过半个CLK周期才对FLASH驱动的数据采样。在外部信号延迟时，有利于推迟数据采样。使用SSHIFT位（QSPI_CR[4]），可将数据采样移位半个CLK周期。
+默认情况下，QSPI在FLASH驱动信号后过半个CLK周期才对FLASH驱动的数据采样。在外部信号延迟时，有利于推迟数据采样。
+使用SSHIFT位（QSPI_CR[4] ），可将数据采样移位半个QSPI CLK周期；使用CYCLE位（QSPI_SSHIFT [0:3]），配置的是系统时钟CLK下延迟采样的周期数，延时采样开关开启时（SSHIFT=1），在这之后再延时采样半SCLK周期。即实际的延迟采样时间是QSPI_SSHIFT[CYCLE]与QSPI_CR[SSHIFT]设定延时的累加。
+
 

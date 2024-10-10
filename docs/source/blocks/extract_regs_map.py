@@ -63,8 +63,8 @@ for block in iter_block_items(doc):
 
     fid.write(f'.. flat-table::\n')
     fid.write(f'   :header-rows: 1\n') 
-    fid.write(f'   :class: tight-table\n')
-    fid.write(f'   :widths: 12 9 6 10 33\n')
+    fid.write(f'   :class: tight-table-reg-map\n')
+    # fid.write(f'   :widths: 12 9 6 10 33\n')
     fid.write(f'\n')
 
     for row in table.rows:
